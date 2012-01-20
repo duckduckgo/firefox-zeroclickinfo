@@ -1,0 +1,23 @@
+richlistitem[type~="Search"] > .ac-title-box > .ac-type-icon {
+  list-style-image: url("chrome://browser/skin/Search.png");
+}
+
+richlistitem[type~="Answer"] > .ac-title-box > .ac-type-icon {
+  list-style-image: url("resource://ddg/Answer2.png");
+}
+
+richlistitem[type~="Answer"] > .ac-url-box {
+  visibility: hidden;
+}
+
+richlistitem[type~="Definition"] > .ac-title-box > .ac-type-icon {
+  list-style-image: url("resource://ddg/Dictionary1.png");
+}
+
+richlistitem[type~="Abstract"] > .ac-title-box > .ac-type-icon {
+  list-style-image: url("resource://ddg/info.png");
+}
+
+richlistitem[type~="Similar"] > .ac-title-box > .ac-type-icon {
+  list-style-image: url("resource://ddg/approximate.png");
+}
