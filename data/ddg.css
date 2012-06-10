@@ -3,7 +3,7 @@ richlistitem[type~="Search"] > .ac-title-box > .ac-type-icon {
 }
 
 richlistitem[type~="Answer"] > .ac-title-box > .ac-type-icon {
-  list-style-image: url("resource://ddg/Answer2.png");
+  list-style-image: url("Answer2.png");
 }
 
 richlistitem[type~="Answer"] > .ac-url-box {
@@ -11,13 +11,13 @@ richlistitem[type~="Answer"] > .ac-url-box {
 }
 
 richlistitem[type~="Definition"] > .ac-title-box > .ac-type-icon {
-  list-style-image: url("resource://ddg/Dictionary1.png");
+  list-style-image: url("Dictionary1.png");
 }
 
 richlistitem[type~="Abstract"] > .ac-title-box > .ac-type-icon {
-  list-style-image: url("resource://ddg/info.png");
+  list-style-image: url("info.png");
 }
 
 richlistitem[type~="Similar"] > .ac-title-box > .ac-type-icon {
-  list-style-image: url("resource://ddg/approximate.png");
+  list-style-image: url("approximate.png");
 }
