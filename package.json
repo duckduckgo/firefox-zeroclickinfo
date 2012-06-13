@@ -1,9 +1,7 @@
 {
-    "name": "ddg_for_fireofx", 
-    "license": "MPL 2.0", 
+    "name": "ddg_for_firefox", 
     "author": "DuckDuckGo", 
     "version": "0.1", 
     "fullName": "DuckDuckGo for Firefox", 
-    "id": "jid1-FhAwuUv20tSFAA", 
     "description": "DuckDuckGo enhancements for Firefox."
 }
