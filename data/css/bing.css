@@ -36,6 +36,7 @@
     */
 
     background: -webkit-gradient(linear, left top, left bottom, from(#da5b4a), to(#c9392c)); 
+    background: -moz-linear-gradient(to bottom, #da5b4a, #c9392c); 
     border: 1px solid #c23d2a;
     margin: -1px; 
     border-top-left-radius: 2px;
@@ -50,10 +51,9 @@
     float: right;
 }
 
-#ddg_zeroclick_header a:active {
+#ddg_zeroclick_header a, #ddg_zeroclick_header a:active {
     color: #fff !important;
 }
-
 
 #ddg_zeroclick_image {
     margin: 10px;
@@ -198,7 +198,7 @@
     padding: 4px;
     min-height: 30px;
     margin-left: 62px;
-    width: 470px;
+    width: 430px !important;
 }
 
 .ddg_zeroclick_category_item a {
@@ -249,7 +249,7 @@
 .wrapper {
     clear: left;
     padding-bottom: 3px;
-    width: 530px;
+    width: 490px !important;
     border: 1px solid #fafafa;
 }
 

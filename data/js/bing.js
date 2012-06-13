@@ -1,7 +1,4 @@
 var options = [];
-chrome.extension.sendRequest({options: "get"}, function(opt){
-    options = opt;
-});
 
 function lastQuery()
 {
@@ -45,7 +42,7 @@ function qsearch(direct) {
     search(query);
 }
 
-var lastquery = document.getElementsByName("q")[0].value;
+var lastquery = document.getElementById("sb_form_q").value;
 // instant search
 document.getElementsByName("q")[0].onkeyup = function(e){
 
@@ -55,12 +52,14 @@ document.getElementsByName("q")[0].onkeyup = function(e){
     if(options.dev)
         console.log(e.keyCode);
 
-    var fn = 'qsearch()';
-    if(e.keyCode == 40 || e.keyCode == 38)
-        fn = 'qsearch(true)';
-
-    clearTimeout(lasttime);
-    lasttime = setTimeout(fn, 700);
+    window.clearTimeout(lasttime);
+    lasttime = window.setTimeout(function(){
+        if(e.keyCode == 40 || e.keyCode == 38)
+            qsearch(true);
+        else
+            qsearch();
+    
+    }, 700);
 
     // instant search suggestions box onclick
     document.getElementsByClassName("gssb_c")[0].onclick = function(){
@@ -79,10 +78,13 @@ document.getElementsByName("go")[0].onclick = function(){
 
 function search(query)
 {
-    var request = {query: query};
-    chrome.extension.sendRequest(request, function(response){
-        renderZeroClick(response, query);
+
+    self.port.emit('load-results', {'query': query});
+    self.port.on('results-loaded', function(data) {
+        //console.log('got data for ', query,':', JSON.stringify(data));
+        renderZeroClick(data.response, query);
     });
+
     if (options.dev)
         console.log("query:", query);
  
