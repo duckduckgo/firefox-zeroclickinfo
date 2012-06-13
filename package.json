@@ -1,7 +1,8 @@
 {
-    "name": "ddg_for_firefox", 
+    "description": "DuckDuckGo enhancements for Firefox.", 
     "author": "DuckDuckGo", 
     "version": "0.1", 
     "fullName": "DuckDuckGo for Firefox", 
-    "description": "DuckDuckGo enhancements for Firefox."
+    "id": "jid1-ZAdIEUB7XOzOJw", 
+    "name": "ddg_for_firefox"
 }
