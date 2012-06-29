@@ -2,13 +2,37 @@ var lastQuery = '';
 //setTimeout(function(){
 //}, 300);
 
+var prefill_text = 'Search DuckDuckGo...';
 self.port.on('opened', function(data) {
 
-  var prefill_text = 'Search DuckDuckGo...';
   var search_form_input_homepage = document.getElementById('search_form_input_homepage');
   search_form_input_homepage.style.color = '#999999';
   search_form_input_homepage.value = prefill_text;
   eval("search_form_input_homepage.onclick = function() {if (this.value=='" + prefill_text + "') {this.value='';this.style.color='#000000';}}");
+
+  document.getElementById('bang_gi').onclick = function(){
+    add_bang('!gi');
+  }
+  document.getElementById('bang_w').onclick = function(){
+    add_bang('!w');
+  }
+  document.getElementById('bang_bi').onclick = function(){
+    add_bang('!bi');
+  }
+  document.getElementById('bang_a').onclick = function(){
+    add_bang('!a');
+  }
+  document.getElementById('bang_n').onclick = function(){
+    add_bang('!n');
+  }
+  document.getElementById('bang_yt').onclick = function(){
+    add_bang('!yt');
+  }
+  document.getElementById('bang_m').onclick = function(){
+    add_bang('!m');
+  }
+
+
 
   document.getElementById('search_form_input_homepage').focus();
 
@@ -133,12 +157,15 @@ document.getElementById('icon_advanced').onclick = function(){
 
 function add_bang(bang) {
   var inp = document.getElementById('search_form_input_homepage');
+  //console.log('adding bang', bang);
+  //console.log(inp.value, inp.value === prefill_text, inp.value === '');
   if (inp.value === prefill_text || inp.value === '') {
     inp.style.color = '#000';
     inp.value = bang + ' ';
     inp.focus();
   } else {
     inp.value += bang;
+    console.log('added ', inp.value);
     search();
   }
 }
