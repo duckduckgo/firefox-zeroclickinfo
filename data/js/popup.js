@@ -1,6 +1,9 @@
 var lastQuery = '';
 //setTimeout(function(){
 //}, 300);
+if (localStorage['ducky'] === 'true') {
+  document.getElementById('adv_ducky').checked = true;  
+}
 
 var prefill_text = 'Search DuckDuckGo...';
 self.port.on('opened', function(data) {
@@ -9,6 +12,9 @@ self.port.on('opened', function(data) {
   search_form_input_homepage.style.color = '#999999';
   search_form_input_homepage.value = prefill_text;
   eval("search_form_input_homepage.onclick = function() {if (this.value=='" + prefill_text + "') {this.value='';this.style.color='#000000';}}");
+
+  document.getElementById('adv_ducky').onclick = ducky_check;
+  document.getElementById('default_search').onclick = change_default;
 
   document.getElementById('bang_gi').onclick = function(){
     add_bang('!gi');
@@ -114,6 +120,7 @@ document.getElementById('icon_advanced').onclick = function(){
        "CZWHyAbLQUtsSyCWhgo/AuIjQLwS6KOn2KoAgAADAOuniZmdabpzAAAAAElFTkSu"+
        "QmCC";
     document.getElementById('advanced').style.display = 'block';
+    document.getElementById('bottom').style.display = 'block';
     this.className = 'maximized';
   } else {
     self.port.emit('advanced-minimize');
@@ -150,6 +157,7 @@ document.getElementById('icon_advanced').onclick = function(){
        "1CDAICjIzwDM9yAD90HLw/vI+hlxVQFAg0EldjgQG0AxCJyF4pVAH+3DVgUABBgA"+
        "ktWRIZgIcFYAAAAASUVORK5CYII=";
     document.getElementById('advanced').style.display = 'none';
+    document.getElementById('bottom').style.display = 'none';
     this.className = 'minimized';
   }
   document.getElementById('search_form_input_homepage').focus();
@@ -157,8 +165,6 @@ document.getElementById('icon_advanced').onclick = function(){
 
 function add_bang(bang) {
   var inp = document.getElementById('search_form_input_homepage');
-  //console.log('adding bang', bang);
-  //console.log(inp.value, inp.value === prefill_text, inp.value === '');
   if (inp.value === prefill_text || inp.value === '') {
     inp.style.color = '#000';
     inp.value = bang + ' ';
@@ -172,5 +178,9 @@ function add_bang(bang) {
 
 function ducky_check(){
   localStorage['ducky'] = document.getElementById('adv_ducky').checked;
+}
+
+function change_default(){
+  self.port.emit('swap-default', document.getElementById('default_search').checked);
 }
 

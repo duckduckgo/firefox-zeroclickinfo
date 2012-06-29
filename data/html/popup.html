@@ -149,6 +149,17 @@ body {
   padding-left: 1px;
 }
 
+#bottom{
+  border-top: 1px solid #999999;
+  clear: left;
+  display: none;
+  color: #000000;
+}
+
+#bottom div {
+  padding: 16px 16px;
+  font-size: 12px;
+}
 
 </style>
 </head>
@@ -203,7 +214,7 @@ ktWRIZgIcFYAAAAASUVORK5CYII=
     <h2>SPECIAL</h2>
     <ul>
       <li>
-        <input type="checkbox" id="adv_ducky" onclick="return ducky_check()"> 
+        <input type="checkbox" id="adv_ducky"> 
         <label for="adv_ducky"> 
           I am feeling Ducky
         </label>
@@ -261,9 +272,14 @@ ktWRIZgIcFYAAAAASUVORK5CYII=
    
     </ul>
   </div>
-
   <div style='clear:both'></div>
 </div>
+  <div id="bottom">
+    <div>
+     <input type="checkbox" id="default_search"> Use DuckDuckGo as your default
+    search engine in Firefox
+    </div>
+  </div>
 
 <script type="text/javascript">
 
