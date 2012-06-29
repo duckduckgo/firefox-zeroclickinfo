@@ -56,6 +56,7 @@ function search(){
 
 document.getElementById('icon_advanced').onclick = function(){
   if (this.className == 'minimized') {
+    self.port.emit('advanced-maximize');
     this.src =
       "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2Fy" +
        "ZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAA"+ 
@@ -91,6 +92,7 @@ document.getElementById('icon_advanced').onclick = function(){
     document.getElementById('advanced').style.display = 'block';
     this.className = 'maximized';
   } else {
+    self.port.emit('advanced-minimize');
     this.src = 
       "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2Fy" +
        "ZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAA"+
