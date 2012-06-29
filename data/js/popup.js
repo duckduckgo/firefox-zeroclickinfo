@@ -1,12 +1,15 @@
 var lastQuery = '';
 //setTimeout(function(){
 //}, 300);
-if (localStorage['ducky'] === 'true') {
-  document.getElementById('adv_ducky').checked = true;  
-}
+
 
 var prefill_text = 'Search DuckDuckGo...';
 self.port.on('opened', function(data) {
+
+  if (localStorage['ducky'] === 'true') {
+    document.getElementById('adv_ducky').checked = true;  
+  }
+
 
   var search_form_input_homepage = document.getElementById('search_form_input_homepage');
   search_form_input_homepage.style.color = '#999999';
