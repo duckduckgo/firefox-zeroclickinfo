@@ -4,17 +4,13 @@ var lastQuery = '';
 
 
 var prefill_text = 'Search DuckDuckGo...';
-self.port.on('opened', function(data) {
+self.port.on('opened', function(maximized) {
 
   if (localStorage['ducky'] === 'true') {
     document.getElementById('adv_ducky').checked = true;  
   }
 
-  if (localStorage['advanced_options'] == undefined){
-    localStorage['advanced_options'] = 'true';
-  }
-
-  if (localStorage['advanced_options'] === 'true') {
+  if (maximized !== false) {
     self.port.emit('advanced-maximize');
     document.getElementById('icon_advanced').src = 
       "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2Fy" +
@@ -89,7 +85,9 @@ self.port.on('opened', function(data) {
     document.getElementById('advanced').style.display = 'none';
     document.getElementById('bottom').style.display = 'none';
     document.getElementById('icon_advanced').className = 'minimized';
-  }  var search_form_input_homepage = document.getElementById('search_form_input_homepage');
+  }  
+  
+  var search_form_input_homepage = document.getElementById('search_form_input_homepage');
   search_form_input_homepage.style.color = '#999999';
   search_form_input_homepage.value = prefill_text;
   eval("search_form_input_homepage.onclick = function() {if (this.value=='" + prefill_text + "') {this.value='';this.style.color='#000000';}}");
@@ -241,7 +239,6 @@ document.getElementById('icon_advanced').onclick = function(){
     document.getElementById('bottom').style.display = 'none';
     this.className = 'minimized';
   }
-  localStorage['advanced_options'] = (document.getElementById('advanced').style.display === 'block');
   document.getElementById('search_form_input_homepage').focus();
 }
 
@@ -253,7 +250,6 @@ function add_bang(bang) {
     inp.focus();
   } else {
     inp.value += bang;
-    console.log('added ', inp.value);
     search();
   }
 }
