@@ -4,13 +4,16 @@ var lastQuery = '';
 
 
 var prefill_text = 'Search DuckDuckGo...';
-self.port.on('opened', function(maximized) {
+self.port.on('opened', function(options) {
 
-  if (localStorage['ducky'] === 'true') {
+  if (options[2] === true) {
     document.getElementById('adv_ducky').checked = true;  
   }
 
-  if (maximized !== false) {
+  if (options[1] === true)
+    document.getElementById('default_search').checked = true;
+
+  if (options[0] !== false) {
     self.port.emit('advanced-maximize');
     document.getElementById('icon_advanced').src = 
       "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2Fy" +
@@ -255,7 +258,7 @@ function add_bang(bang) {
 }
 
 function ducky_check(){
-  localStorage['ducky'] = document.getElementById('adv_ducky').checked;
+  self.port.emit('ducky-swap', document.getElementById('adv_ducky').checked);
 }
 
 function change_default(){
