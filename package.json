@@ -4,5 +4,14 @@
     "version": "0.1.7", 
     "fullName": "DuckDuckGo for Firefox", 
     "id": "jid1-ZAdIEUB7XOzOJw", 
-    "name": "ddg_for_firefox"
+    "name": "ddg_for_firefox",
+    "preferences": [
+        {
+                "type": "bool",
+                "name": "zeroclick",
+                "value": true,
+                "title": "Show ZeroClick Info in Google and Bing"
+        }
+    
+    ]
 }
