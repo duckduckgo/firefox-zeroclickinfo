@@ -3,9 +3,9 @@
   <ShortName>DuckDuckGo</ShortName> 
   <Description>Search DuckDuckGo</Description> 
   <InputEncoding>UTF-8</InputEncoding> 
-  <LongName>Search Plugin for DuckDuckGo (HTTP version)</LongName> 
+  <LongName>Search Plugin for DuckDuckGo (HTTPS version)</LongName> 
   <Image width="16" height="16">http://duckduckgo.com/favicon.ico</Image>
-  <Url type="text/html" method="get" template="http://duckduckgo.com/">
+  <Url type="text/html" method="get" template="https://duckduckgo.com/">
     <Param name="q" value="{searchTerms}"/>  
   </Url>
 </OpenSearchDescription>
