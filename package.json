@@ -4,6 +4,7 @@
     "version": "0.1.7", 
     "fullName": "DuckDuckGo for Firefox", 
     "id": "jid1-ZAdIEUB7XOzOJw", 
+    "icon": "data/img/icon_48.png",
     "name": "ddg_for_firefox",
     "preferences": [
         {
