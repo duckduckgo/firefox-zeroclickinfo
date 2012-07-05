@@ -145,7 +145,7 @@ function showZeroClick()
 
 function createResultDiv()
 {
-    var result = document.getElementById("results");
+    var result = document.getElementById("results_container");
     var ddg_result = document.getElementById("ddg_zeroclick");
     showZeroClick();
     if (ddg_result === null) {
