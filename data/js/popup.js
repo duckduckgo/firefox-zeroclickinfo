@@ -12,6 +12,9 @@ self.port.on('opened', function(options) {
 
   if (options[1] === true)
     document.getElementById('default_search').checked = true;
+  
+  if (options[3] === true)
+    document.getElementById('adv_meanings').checked = true;
 
   if (options[0] !== false) {
     self.port.emit('advanced-maximize');
@@ -97,6 +100,7 @@ self.port.on('opened', function(options) {
 
   document.getElementById('adv_ducky').onclick = ducky_check;
   document.getElementById('default_search').onclick = change_default;
+  document.getElementById('adv_meanings').onclick = meanings_check;
 
   document.getElementById('bang_gi').onclick = function(){
     add_bang('!gi');
@@ -259,6 +263,10 @@ function add_bang(bang) {
 
 function ducky_check(){
   self.port.emit('ducky-swap', document.getElementById('adv_ducky').checked);
+}
+
+function meanings_check(){
+  self.port.emit('meanings-swap', document.getElementById('adv_ducky').checked);
 }
 
 function change_default(){
