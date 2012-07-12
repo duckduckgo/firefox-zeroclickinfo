@@ -18,7 +18,12 @@
                 "name": "ddg_default",
                 "value": false,
                 "title": "Use DuckDuckGo as your default search engine in Firefox"
+        },
+        {
+                "type": "bool",
+                "name": "toolbar_button",
+                "value": true,
+                "title": "Show DuckDuckGo popup button in the toolbar"
         }
-    
     ]
 }
