@@ -12,6 +12,12 @@
                 "name": "zeroclick",
                 "value": true,
                 "title": "Show ZeroClick Info in Google and Bing"
+        },
+        {
+                "type": "bool",
+                "name": "ddg_default",
+                "value": false,
+                "title": "Use DuckDuckGo as your default search engine in Firefox"
         }
     
     ]
