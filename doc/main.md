@@ -1,9 +1,2 @@
-
-DuckDuckGo enhancements for Firefox
-
-- ZeroClick Info in the Awesome Bar
-- ZeroClick Info in Google and Bing
-- ZeroClick Info via context menu
-
-
-
+The main module is a program that creates a widget.  When a user clicks on
+the widget, the program loads the mozilla.org website in a new tab.

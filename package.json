@@ -1,9 +1,9 @@
 {
-    "name": "ddg_for_fireofx", 
+    "description": "DuckDuckGo enhancements for Firefox Mobile", 
     "license": "MPL 2.0", 
-    "author": "DuckDuckGo", 
+    "author": "", 
     "version": "0.1", 
-    "fullName": "DuckDuckGo for Firefox", 
-    "id": "jid1-FhAwuUv20tSFAA", 
-    "description": "DuckDuckGo enhancements for Firefox."
+    "fullName": "DuckDuckGo for Mobile", 
+    "id": "jid1-JpYTXAOe6YRC7A", 
+    "name": "ddg_for_firefox_mobile"
 }
