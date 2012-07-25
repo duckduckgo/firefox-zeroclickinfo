@@ -99,7 +99,6 @@ self.port.on('opened', function(options) {
   var search_form_input_homepage = document.getElementById('search_form_input_homepage');
   search_form_input_homepage.style.color = '#999999';
   search_form_input_homepage.value = prefill_text;
-  eval("search_form_input_homepage.onclick = function() {if (this.value=='" + prefill_text + "') {this.value='';this.style.color='#000000';}}");
 
   document.getElementById('adv_ducky').onclick = ducky_check;
   document.getElementById('default_search').onclick = change_default;
