@@ -24,6 +24,12 @@
                 "name": "toolbar_button",
                 "value": true,
                 "title": "Show DuckDuckGo popup button in the toolbar"
+        },
+        {
+                "type": "bool",
+                "name": "dev",
+                "value": false,
+                "title": "Show debug information"
         }
     ]
 }
