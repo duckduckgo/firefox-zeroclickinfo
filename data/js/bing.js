@@ -54,13 +54,14 @@ document.getElementsByName('q')[0].onkeyup = function(e){
     if(options.dev)
         console.log(e.keyCode);
 
-    var fn = function(){ qsearch(); };
-
+    var direct = false;
     if(e.keyCode == 40 || e.keyCode == 38)
-        fn = function(){ qsearch(true); };
+        direct = true;
 
     clearTimeout(ddg_timer);
-    ddg_timer = setTimeout(fn, 700);
+    ddg_timer = setTimeout(function(){
+        qsearch(direct);
+    }, 700);
 };
 
 document.getElementsByName("go")[0].onclick = function(){

@@ -61,7 +61,9 @@ document.getElementsByName('q')[0].onkeyup = function(e){
         fn = function(){ qsearch(true); };
 
     clearTimeout(ddg_timer);
-    ddg_timer = setTimeout(fn, 700);
+    ddg_timer = setTimeout(function(){
+        fn();
+    }, 700);
 
     // instant search suggestions box onclick
     document.getElementsByClassName("gssb_c")[0].onclick = function(){
