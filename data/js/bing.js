@@ -1,5 +1,8 @@
+self.port.emit('get-options');
 var options = [];
-options.dev = true;
+self.port.on('set-options', function(opt){
+    options = opt;
+});
 
 var ddgBox = new DuckDuckBox('q', [], 'results', false);
 
