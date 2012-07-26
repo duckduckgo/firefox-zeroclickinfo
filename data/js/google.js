@@ -17,7 +17,7 @@
 self.port.emit('get-options');
 var options = [];
 self.port.on('set-options', function(opt){
-    options = opt;
+    options = opt['options'];
 });
 
 var ddgBox = new DuckDuckBox('q', ['isr_pps'], 'center_col', true);
