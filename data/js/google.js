@@ -62,9 +62,8 @@ function qsearch(direct) {
 } 
 
 // instant search
-document.getElementsByName('q')[0].onkeyup = function(e){
-
-    query = getQuery();
+$('[name="q"]').keyup(function(e){
+    var query = getQuery();
     if(ddgBox.lastQuery !== query && query !== '')
         ddgBox.hideZeroClick();
 
@@ -91,7 +90,7 @@ document.getElementsByName('q')[0].onkeyup = function(e){
     };
 };
 
-document.getElementsByName("btnG")[0].onclick = function(){
+$('[name="btnG"]').click(function(){
     qsearch();
 };
 

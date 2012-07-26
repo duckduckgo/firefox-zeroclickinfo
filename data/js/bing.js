@@ -61,9 +61,9 @@ function qsearch(direct) {
 } 
 
 // instant search
-document.getElementsByName('q')[0].onkeyup = function(e){
 
-    query = getQuery();
+$('[name="q"]').keyup(function(e){
+    var query = getQuery();
     if(ddgBox.lastQuery !== query && query !== '')
         ddgBox.hideZeroClick();
 
@@ -78,11 +78,12 @@ document.getElementsByName('q')[0].onkeyup = function(e){
     ddg_timer = setTimeout(function(){
         qsearch(direct);
     }, 700);
-};
+   
+});
 
-document.getElementsByName("go")[0].onclick = function(){
+$('[name="go"]').click(function(){
     qsearch();
-};
+});
 
 ddgBox.init();
 
