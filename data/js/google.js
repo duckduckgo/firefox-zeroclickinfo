@@ -88,11 +88,11 @@ $('[name="q"]').keyup(function(e){
         ddgBox.hideZeroClick();
         qsearch(true);
     };
-};
+});
 
 $('[name="btnG"]').click(function(){
     qsearch();
-};
+});
 
 ddgBox.init();
 
