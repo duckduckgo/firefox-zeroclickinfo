@@ -20,7 +20,7 @@ self.port.on('set-options', function(opt){
     options = opt;
 });
 
-var ddgBox = new DuckDuckBox('q', [], 'results', false);
+var ddgBox = new DuckDuckBox('q', [], 'results_container', false);
 
 ddgBox.search = function(query) {
 
