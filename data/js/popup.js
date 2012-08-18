@@ -71,7 +71,6 @@ self.port.on('opened', function(options) {
        "QmCC";
 
     document.getElementById('advanced').style.display = 'block';
-    document.getElementById('bottom').style.display = 'block';
     document.getElementById('icon_advanced').className = 'maximized';
   } else {
     self.port.emit('advanced-minimize');
@@ -108,7 +107,6 @@ self.port.on('opened', function(options) {
        "1CDAICjIzwDM9yAD90HLw/vI+hlxVQFAg0EldjgQG0AxCJyF4pVAH+3DVgUABBgA"+
        "ktWRIZgIcFYAAAAASUVORK5CYII=";
     document.getElementById('advanced').style.display = 'none';
-    document.getElementById('bottom').style.display = 'none';
     document.getElementById('icon_advanced').className = 'minimized';
   }  
   
@@ -225,7 +223,6 @@ document.getElementById('icon_advanced').onclick = function(){
        "CZWHyAbLQUtsSyCWhgo/AuIjQLwS6KOn2KoAgAADAOuniZmdabpzAAAAAElFTkSu"+
        "QmCC";
     document.getElementById('advanced').style.display = 'block';
-    document.getElementById('bottom').style.display = 'block';
     this.className = 'maximized';
   } else {
     self.port.emit('advanced-minimize');
@@ -262,7 +259,6 @@ document.getElementById('icon_advanced').onclick = function(){
        "1CDAICjIzwDM9yAD90HLw/vI+hlxVQFAg0EldjgQG0AxCJyF4pVAH+3DVgUABBgA"+
        "ktWRIZgIcFYAAAAASUVORK5CYII=";
     document.getElementById('advanced').style.display = 'none';
-    document.getElementById('bottom').style.display = 'none';
     this.className = 'minimized';
   }
   document.getElementById('search_form_input_homepage').focus();

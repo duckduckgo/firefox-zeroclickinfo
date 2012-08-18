@@ -166,18 +166,6 @@ body {
   padding-left: 1px;
 }
 
-#bottom{
-  border-top: 1px solid #999999;
-  clear: left;
-  display: none;
-  color: #000000;
-}
-
-#bottom div {
-  padding: 16px 16px;
-  font-size: 12px;
-}
-
 </style>
 </head>
 <body>
@@ -248,6 +236,15 @@ ktWRIZgIcFYAAAAASUVORK5CYII=
        Answers on Google/Bing
       </label>
      </li> 
+      <li>
+        <input style="float: left;" type="checkbox" id="default_search">
+        <div style="width: 140px; float: left; padding-left: 7px;">
+          <label for="default_search" style="padding-left: 0px;">
+            DuckDuckGo as default search engine
+          </label>
+        </div>
+     </li> 
+ 
     </ul>
 
   </div>
@@ -298,12 +295,4 @@ ktWRIZgIcFYAAAAASUVORK5CYII=
   </div>
   <div style='clear:both'></div>
 </div>
-  <div id="bottom">
-    <div>
-      <input type="checkbox" id="default_search"> 
-      <label for="default_search">
-        Use DuckDuckGo as your default search engine in Firefox
-      </label>
-    </div>
-  </div>
 </body></html>
