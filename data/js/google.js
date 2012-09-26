@@ -23,10 +23,8 @@ self.port.on('set-options', function(opt){
 var ddgBox = new DuckDuckBox('q', ['isr_pps'], 'center_col', true);
 
 ddgBox.search = function(query) {
-
-    self.port.emit('load-results', {'query': query});
+self.port.emit('load-results', {'query': query});
     self.port.on('results-loaded', function(data) {
-        //console.log('got data for ', query,':', JSON.stringify(data));
         ddgBox.renderZeroClick(data.response, query);
     });
 
