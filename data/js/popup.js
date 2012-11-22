@@ -21,7 +21,7 @@ var lastQuery = '';
 
 var prefill_text = 'Search DuckDuckGo...';
 self.port.on('opened', function(options) {
-
+  
   if (options[2] === true) {
     document.getElementById('adv_ducky').checked = true;  
   }
@@ -147,6 +147,7 @@ self.port.on('opened', function(options) {
 
   document.getElementById('search_form_homepage').onsubmit = function(){
       search();
+      return false;
   }
 
   document.getElementById("search_form_input_homepage").onkeydown = function(){
