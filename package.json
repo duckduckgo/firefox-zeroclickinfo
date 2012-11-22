@@ -27,6 +27,12 @@
         },
         {
                 "type": "bool",
+                "name": "addressbar_zci",
+                "value": true,
+                "title": "Show definitions below the address bar"
+        },
+        {
+                "type": "bool",
                 "name": "dev",
                 "value": false,
                 "title": "Show debug information"
