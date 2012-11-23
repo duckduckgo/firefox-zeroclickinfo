@@ -29,7 +29,7 @@
                 "type": "bool",
                 "name": "addressbar_zci",
                 "value": true,
-                "title": "Show definitions below the address bar"
+                "title": "Answers in address bar"
         },
         {
                 "type": "bool",
