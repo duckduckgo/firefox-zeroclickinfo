@@ -147,6 +147,7 @@ self.port.on('opened', function(options) {
 
   document.getElementById('search_form_homepage').onsubmit = function(){
       search();
+      e.preventDefault();
       return false;
   }
 
