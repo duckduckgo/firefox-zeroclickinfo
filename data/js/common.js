@@ -394,13 +394,14 @@ DuckDuckBox.prototype = {
                                         href: official_site['url']
                             }).text(official_site['text']));
         }
-       
+        
+        var decoded_abstract = $('<div/>').html(res['Abstract']).text();
         var text_div = $('<div>')
                     .click(function (event){
                                 window.location.href = res['AbstractURL'];
                             })
                     .append($('<p>')
-                                .text(res['Abstract']))
+                                .text(decoded_abstract)
                     .append(official_links);
 
 
