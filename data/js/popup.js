@@ -166,6 +166,11 @@ self.port.on('opened', function(options) {
     }
   }; 
 
+
+  document.getElementById('all_bangs_link').onclick = function(){
+    self.port.emit('open-ddg', "http://duckduckgo.com/bang.html");
+  }
+
 });
 
 
