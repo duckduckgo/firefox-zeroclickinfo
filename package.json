@@ -1,8 +1,8 @@
 {
-    "description": "DuckDuckGo enhancements for Firefox.", 
+    "description": "DuckDuckGo Plus", 
     "author": "DuckDuckGo", 
     "version": "0.2.17",
-    "fullName": "DuckDuckGo for Firefox", 
+    "fullName": "DuckDuckGo Plus", 
     "id": "jid1-ZAdIEUB7XOzOJw", 
     "icon": "data/img/icon_48.png",
     "name": "ddg_for_firefox",
