@@ -428,6 +428,8 @@ DuckDuckBox.prototype = {
         var tmp_div = $('<div>', {
                               style: 'display:none;padding-left:0px;'
                             });
+        if (this.hover)
+            tmp_div.css('margin-left', '-1px');
 
         for (var i = 0; i < hidden_categories.length; i++){
             tmp_div.append( hidden_categories[i] );
