@@ -64,7 +64,7 @@
 }
 
 #ddg_zeroclick_header img {
-    margin-top: -4px;
+    margin-top: -4px !important;
     float: right;
 }
 
