@@ -426,7 +426,7 @@ DuckDuckBox.prototype = {
         abst.append(more_topics);
 
         var tmp_div = $('<div>', {
-                              style: 'display:none;padding-left:0px;margin-left:-1px;'
+                              style: 'display:none;padding-left:0px;'
                             });
 
         for (var i = 0; i < hidden_categories.length; i++){
