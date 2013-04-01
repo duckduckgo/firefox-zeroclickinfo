@@ -2,7 +2,7 @@ NAME := $(shell python2 -c "import json,sys;print json.loads(sys.stdin.read()).g
 VERSION := $(shell python2 -c "import json,sys;print json.loads(sys.stdin.read()).get('version','')" < package.json)
 
 xpi:
-	#cd /opt/addon-sdk && source bin/activate; cd -
+	cd /opt/addon-sdk && source bin/activate; cd -
 	cfx xpi
 	mv $(NAME).xpi build/
 	git commit -am "built $(VERSION)"
