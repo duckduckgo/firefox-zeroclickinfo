@@ -8,4 +8,8 @@
   <Url type="text/html" method="get" template="https://duckduckgo.com/">
     <Param name="q" value="{searchTerms}"/>  
   </Url>
+  <Url type="application/x-suggestions+json" method="GET" template="https://duckduckgo.com/ac/"/>
+    <Param name="q" value="{searchTerms}"/>
+    <Param name="type" value="list"/>
+  </Url>
 </OpenSearchDescription>
