@@ -10,6 +10,5 @@
   </Url>
   <Url type="application/x-suggestions+json" method="GET" template="https://duckduckgo.com/ac/">
     <Param name="q" value="{searchTerms}"/>
-    <Param name="type" value="list"/>
   </Url>
 </OpenSearchDescription>
