@@ -36,6 +36,13 @@
                 "name": "dev",
                 "value": false,
                 "title": "Show debug information"
+        },
+        {
+                "type": "bool",
+                "name": "ask_dax",
+                "value": true,
+                "title": "Answers in the context menu"
         }
+
     ]
 }
