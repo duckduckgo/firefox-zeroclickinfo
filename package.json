@@ -41,7 +41,7 @@
                 "type": "bool",
                 "name": "ask_dax",
                 "value": true,
-                "title": "Answers in the context menu"
+                "title": "Answers on right click"
         }
 
     ]
