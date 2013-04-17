@@ -19,7 +19,6 @@ var lastQuery = '';
 //}, 300);
 
 
-var prefill_text = 'Search DuckDuckGo...';
 self.port.on('opened', function(options) {
   
   if (options[2] === true) {
@@ -110,10 +109,6 @@ self.port.on('opened', function(options) {
     document.getElementById('icon_advanced').className = 'minimized';
   }  
   
-  var search_form_input_homepage = document.getElementById('search_form_input_homepage');
-  search_form_input_homepage.style.color = '#999999';
-  search_form_input_homepage.value = prefill_text;
-
   document.getElementById('adv_ducky').onclick = ducky_check;
   document.getElementById('default_search').onclick = change_default;
   document.getElementById('adv_meanings').onclick = meanings_check;
@@ -150,22 +145,6 @@ self.port.on('opened', function(options) {
       e.preventDefault();
       return false;
   }
-
-  document.getElementById("search_form_input_homepage").onkeydown = function(){
-    if (this.value == prefill_text)
-      this.value = '';
-
-    this.style.color = '#000000';
-  };               
-  document.getElementById("search_form_input_homepage").onkeyup = function(){
-    if (this.value == '') {
-      this.style.color = '#999999';
-
-      this.value = prefill_text;
-      document.getElementById('search_form_input_homepage').focus();
-    }
-  }; 
-
 
   document.getElementById('all_bangs_link').onclick = function(){
     self.port.emit('open-ddg', "http://duckduckgo.com/bang.html");
