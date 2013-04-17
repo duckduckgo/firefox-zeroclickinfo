@@ -252,7 +252,7 @@ document.getElementById('icon_advanced').onclick = function(){
 
 function add_bang(bang) {
   var inp = document.getElementById('search_form_input_homepage');
-  if (inp.value === prefill_text || inp.value === '') {
+  if (inp.value === '') {
     inp.style.color = '#000';
     inp.value = bang + ' ';
     inp.focus();
