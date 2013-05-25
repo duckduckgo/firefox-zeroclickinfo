@@ -42,7 +42,12 @@
                 "name": "ask_dax",
                 "value": true,
                 "title": "Answers on right click"
+        },
+        {
+                "type": "bool",
+                "name": "use_hotkey",
+                "value": true,
+                "title": "Open popup with a hotkey (Ctrl/Command+Alt+D)"
         }
-
     ]
 }
