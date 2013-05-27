@@ -47,7 +47,7 @@
                 "type": "bool",
                 "name": "use_hotkey",
                 "value": true,
-                "title": "Open popup with a hotkey (Ctrl/Command+Alt+D)"
+                "title": "Hotkey (Alt+D)"
         }
     ]
 }
