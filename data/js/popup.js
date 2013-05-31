@@ -34,6 +34,12 @@ self.port.on('opened', function(options) {
   if (options[4] === true)
     document.getElementById('adv_zeroclick').checked = true;
 
+  document.getElementById('search_form_input_homepage').focus();
+
+  // putting last searched value to the input
+  if (options[5] != undefined && options[5] != '')
+    document.getElementById("search_form_input_homepage").value = options[5];
+
   if (options[0] !== false) {
     self.port.emit('advanced-maximize');
     document.getElementById('icon_advanced').src = 
@@ -138,7 +144,6 @@ self.port.on('opened', function(options) {
 
 
 
-  document.getElementById('search_form_input_homepage').focus();
 
   document.getElementById('search_form_homepage').onsubmit = function(){
       search();
@@ -160,6 +165,9 @@ function search(){
       return;
 
   lastQuery = input;
+
+  
+  self.port.emit('set-last_search', input);
   
   if (document.getElementById('adv_ducky').checked === true) {
     input = "\\" + input;
