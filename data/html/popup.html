@@ -47,13 +47,22 @@ body {
 }
 
 #search_form_input_homepage {
-  width: 394px;
-  -webkit-box-shadow: inset -1px 0px 2px rgba(0, 0, 0, 0.3) !important;
-  box-shadow: inset -1px 0px 2px rgba(0, 0, 0, 0.3) !important;
+  width: 364px;
+  -webkit-box-shadow: inset 1px 0px 2px -1px rgba(0, 0, 0, 0.3) !important;
+  box-shadow: inset 1px 0px 2px -1px rgba(0, 0, 0, 0.3) !important;
+  border-right: 0 !important;
 }
 
-#search_wrapper_homepage {
-  width: 57px !important;
+#search_form_input_clear {
+  height: 39px;
+  border: #8d8d8d solid 1px !important;
+  border-right: 0 !important;
+  border-left: 0 !important;
+  font-size: 18px;
+  -webkit-box-shadow: inset -2px 0px 2px -1px rgba(0, 0, 0, 0.3) !important;
+  box-shadow: inset -2px 0px 2px -1px rgba(0, 0, 0, 0.3) !important;
+  background: #fff;
+  outline: none;
 }
 
 #search_button_homepage {
@@ -168,6 +177,10 @@ body {
   padding-left: 1px;
 }
 
+#search_wrapper_homepage {
+  width: auto !important;
+}
+
 </style>
 </head>
 <body>
@@ -177,6 +190,7 @@ body {
 <div id="search_wrapper_homepage">
   <input id="search_button_homepage" type="submit" value="" />
 </div>
+<input id="search_form_input_clear" type="button" value="" tabindex="3"></input>
 <input type="text" autocomplete="off"
   placeholder="Search DuckDuckGo..."
   name="q" id="search_form_input_homepage" value="">

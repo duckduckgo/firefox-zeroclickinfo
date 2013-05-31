@@ -37,8 +37,10 @@ self.port.on('opened', function(options) {
   document.getElementById('search_form_input_homepage').focus();
 
   // putting last searched value to the input
-  if (options[5] != undefined && options[5] != '')
-    document.getElementById("search_form_input_homepage").value = options[5];
+  if (options[5] != undefined && options[5] != '') {
+      document.getElementById("search_form_input_homepage").value = options[5];
+      document.getElementById("search_form_input_clear").style.background = '#fff url("https://duckduckgo.com/assets/icon_xon.v101.png") no-repeat left center';
+  }
 
   if (options[0] !== false) {
     self.port.emit('advanced-maximize');
@@ -120,6 +122,8 @@ self.port.on('opened', function(options) {
   document.getElementById('adv_meanings').onclick = meanings_check;
   document.getElementById('adv_zeroclick').onclick = zeroclick_check;
 
+  document.getElementById('search_form_input_clear').onclick = search_input_clear;
+
   document.getElementById('bang_gi').onclick = function(){
     add_bang('!gi');
   }
@@ -143,7 +147,14 @@ self.port.on('opened', function(options) {
   }
 
 
-
+  document.getElementById('search_form_input_homepage').onkeydown = function(){
+    document.getElementById("search_form_input_clear").style.background = '#fff url("https://duckduckgo.com/assets/icon_xon.v101.png") no-repeat left center';
+  }
+  document.getElementById("search_form_input_homepage").onkeyup = function(){
+      if (this.value == '') {
+        document.getElementById("search_form_input_clear").style.background = '#fff';
+      }
+  };
 
   document.getElementById('search_form_homepage').onsubmit = function(){
       search();
@@ -286,6 +297,12 @@ function change_default(){
   self.port.emit('swap-default', document.getElementById('default_search').checked);
 }
 
+
+function search_input_clear() {
+  document.getElementById('search_form_input_homepage').value = '';
+  document.getElementById("search_form_input_clear").style.background = '#fff';
+  document.getElementById('search_form_input_homepage').focus();
+}
 
 
 
