@@ -48,6 +48,12 @@
                 "name": "use_hotkey",
                 "value": true,
                 "title": "Hotkey (Alt+D)"
+        },
+        {
+                "type": "bool",
+                "name": "remember_last_search",
+                "value": true,
+                "title": "Remember last search in the popup"
         }
     ]
 }
