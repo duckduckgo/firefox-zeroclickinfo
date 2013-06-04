@@ -290,8 +290,6 @@ function add_bang(bang) {
         search();
     }
   }
-
-  console.log('and done');
 }
 
 function ducky_check(){
