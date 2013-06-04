@@ -156,10 +156,9 @@ self.port.on('opened', function(options) {
       }
   };
 
-  document.getElementById('search_form_homepage').onsubmit = function(){
-      search();
+  document.getElementById('search_form_homepage').onsubmit = function(e){
       e.preventDefault();
-      return false;
+      return search();
   }
 
   document.getElementById('all_bangs_link').onclick = function(){
@@ -172,8 +171,11 @@ self.port.on('opened', function(options) {
 function search(){
   var input = document.getElementById("search_form_input_homepage").value;
 
+  if (input == '')
+      return false;
+
   if (input === lastQuery)
-      return;
+      return false;
 
   lastQuery = input;
 
@@ -190,6 +192,8 @@ function search(){
   }
 
   self.port.emit('open-ddg', "https://duckduckgo.com/?q="+encodeURIComponent(input)+special);
+
+  return false;
 }
 
 document.getElementById('icon_advanced').onclick = function(){
