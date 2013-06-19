@@ -1,7 +1,7 @@
 {
     "description": "DuckDuckGo Plus", 
     "author": "DuckDuckGo", 
-    "version": "0.2.37",
+    "version": "0.2.38",
     "fullName": "DuckDuckGo Plus", 
     "id": "jid1-ZAdIEUB7XOzOJw", 
     "icon": "data/img/icon_48.png",
@@ -47,7 +47,7 @@
                 "type": "bool",
                 "name": "use_hotkey",
                 "value": true,
-                "title": "Hotkey (Alt+D)"
+                "title": "Hotkey (Alt+G)"
         },
         {
                 "type": "bool",
