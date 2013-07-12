@@ -1,7 +1,7 @@
 {
     "description": "DuckDuckGo Plus", 
     "author": "DuckDuckGo", 
-    "version": "0.2.45",
+    "version": "0.2.46",
     "fullName": "DuckDuckGo Plus", 
     "id": "jid1-ZAdIEUB7XOzOJw", 
     "icon": "data/img/icon_48.png",
@@ -16,7 +16,7 @@
         {
                 "type": "bool",
                 "name": "ddg_default",
-                "value": false,
+                "value": true,
                 "title": "Use DuckDuckGo as your default search engine in Firefox"
         },
         {
