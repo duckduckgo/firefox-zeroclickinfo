@@ -318,6 +318,9 @@ function toolbarbutton_check(){
 }
 
 function search_input_clear() {
+  lastQuery = '';
+  self.port.emit('set-last_search', '');
+
   document.getElementById('search_form_input_homepage').value = '';
   document.getElementById("search_form_input_clear").style.background = '#fff';
   document.getElementById('search_form_input_homepage').focus();
