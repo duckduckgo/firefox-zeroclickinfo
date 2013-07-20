@@ -171,7 +171,7 @@ self.port.on('opened', function(options) {
   }
 
   document.getElementById('addons').onclick = function(){
-    self.port.emit('open-ddg', "about:addons#extensions");
+    self.port.emit('open-ddg', "about:addons#category-extension");
   }
 
 
