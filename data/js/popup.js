@@ -170,6 +170,11 @@ self.port.on('opened', function(options) {
     self.port.emit('open-ddg', "http://duckduckgo.com/bang.html");
   }
 
+  document.getElementById('addons').onclick = function(){
+    self.port.emit('open-ddg', "about:addons");
+  }
+
+
 });
 
 
