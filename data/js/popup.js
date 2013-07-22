@@ -38,7 +38,7 @@ self.port.on('opened', function(options) {
     document.getElementById('adv_toolbarbutton').checked = true;
 
 
-  document.getElementById('search_form_input_homepage').focus();
+  document.getElementById('search_form_input_homepage').select();
 
   // putting last searched value to the input
   if (options[5] != undefined && options[5] != '') {
