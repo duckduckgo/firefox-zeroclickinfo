@@ -28,8 +28,8 @@ self.port.on('opened', function(options) {
   if (options[1] === true)
     document.getElementById('default_search').checked = true;
   
-  if (options[3] === true)
-    document.getElementById('adv_meanings').checked = true;
+//if (options[3] === true)
+//  document.getElementById('adv_meanings').checked = true;
 
   if (options[4] === true)
     document.getElementById('adv_zeroclick').checked = true;
@@ -123,7 +123,7 @@ self.port.on('opened', function(options) {
   
   document.getElementById('adv_ducky').onclick = ducky_check;
   document.getElementById('default_search').onclick = change_default;
-  document.getElementById('adv_meanings').onclick = meanings_check;
+//document.getElementById('adv_meanings').onclick = meanings_check;
   document.getElementById('adv_zeroclick').onclick = zeroclick_check;
   document.getElementById('adv_toolbarbutton').onclick = toolbarbutton_check;
 
@@ -197,9 +197,9 @@ function search(){
   }
 
   var special = '';
-  if(document.getElementById('adv_meanings').checked !== true) {
-    special = '&d=1'; 
-  }
+//if(document.getElementById('adv_meanings').checked !== true) {
+//  special = '&d=1'; 
+//}
 
   self.port.emit('open-ddg', "https://duckduckgo.com/?q="+encodeURIComponent(input)+special);
 
@@ -306,9 +306,9 @@ function ducky_check(){
   self.port.emit('ducky-swap', document.getElementById('adv_ducky').checked);
 }
 
-function meanings_check(){
-  self.port.emit('meanings-swap', document.getElementById('adv_ducky').checked);
-}
+////function meanings_check(){
+////  self.port.emit('meanings-swap', document.getElementById('adv_ducky').checked);
+////}
 
 function zeroclick_check(){
   self.port.emit('zeroclick-swap', document.getElementById('adv_zeroclick').checked);
