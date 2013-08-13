@@ -11,37 +11,31 @@
                 "type": "bool",
                 "name": "zeroclick",
                 "value": true,
-                "title": "Show ZeroClick Info in Google and Bing"
+                "title": "Answers on Google/Bing (on top of links)"
         },
         {
                 "type": "bool",
                 "name": "ddg_default",
                 "value": true,
-                "title": "Use DuckDuckGo as your default search engine in Firefox"
+                "title": "DuckDuckGo as default (in search box and address bar)"
         },
         {
                 "type": "bool",
                 "name": "toolbar_button",
                 "value": true,
-                "title": "Show DuckDuckGo popup button in the toolbar"
+                "title": "Show toolbar button (next to address bar)"
         },
         {
                 "type": "bool",
                 "name": "addressbar_zci",
                 "value": true,
-                "title": "Answers in address bar"
-        },
-        {
-                "type": "bool",
-                "name": "dev",
-                "value": false,
-                "title": "Show debug information"
+                "title": "Answers in address bar (as you type)"
         },
         {
                 "type": "bool",
                 "name": "ask_dax",
                 "value": true,
-                "title": "Answers on right click"
+                "title": "Answers on right click (when you highlight words)"
         },
         {
                 "type": "bool",
@@ -54,6 +48,12 @@
                 "name": "remember_last_search",
                 "value": true,
                 "title": "Remember last search in the popup"
+        },
+        {
+                "type": "bool",
+                "name": "dev",
+                "value": false,
+                "title": "Show debug information"
         }
     ]
 }
