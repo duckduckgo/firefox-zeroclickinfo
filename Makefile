@@ -9,7 +9,6 @@ xpi:
 	git commit -am "built $(VERSION)"
 
 tmpxpi:
-	cd /opt/addon-sdk && source bin/activate; cd -
 	cfx xpi
 	mkdir -p $(TMP)
 	mv $(NAME).xpi $(TMP)/
