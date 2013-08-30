@@ -27,7 +27,9 @@ self.port.on('opened', function(options) {
 
   if (options[1] === true)
     document.getElementById('default_search').checked = true;
-  
+  else
+    document.getElementById('default_search').checked = false;
+
 //if (options[3] === true)
 //  document.getElementById('adv_meanings').checked = true;
 
