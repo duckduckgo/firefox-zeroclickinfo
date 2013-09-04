@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-var lastQuery = '';
 //setTimeout(function(){
 //}, 300);
 
@@ -186,11 +185,6 @@ function search(){
   if (input == '')
       return false;
 
-  if (input === lastQuery)
-      return false;
-
-  lastQuery = input;
-
   
   self.port.emit('set-last_search', input);
   
@@ -325,7 +319,6 @@ function toolbarbutton_check(){
 }
 
 function search_input_clear() {
-  lastQuery = '';
   self.port.emit('set-last_search', '');
 
   document.getElementById('search_form_input_homepage').value = '';
