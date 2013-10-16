@@ -23,6 +23,9 @@ self.port.on('set-options', function(opt){
 var ddgBox = new DuckDuckBox('q', ['rg_s'], 'center_col', true, 'google');
 
 ddgBox.search = function(query) {
+    if (query == undefined)
+        return;
+    
 self.port.emit('load-results', {'query': query});
     self.port.on('results-loaded', function(data) {
         ddgBox.renderZeroClick(data.response, query);
