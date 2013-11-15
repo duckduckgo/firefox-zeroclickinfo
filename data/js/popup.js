@@ -42,7 +42,7 @@ self.port.on('opened', function(options) {
   document.getElementById('search_form_input_homepage').select();
 
   // putting last searched value to the input
-  if (options[5] != undefined && options[5] != '') {
+  if (options[5] != undefined || options[5] != '') {
       document.getElementById("search_form_input_homepage").value = options[5];
       document.getElementById("search_form_input_clear").style.background = '#fff url("https://duckduckgo.com/assets/icon_xon.v101.png") no-repeat left center';
   }
