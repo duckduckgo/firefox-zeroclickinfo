@@ -51,6 +51,12 @@
         },
         {
                 "type": "bool",
+                "name": "thankspage",
+                "value": true,
+                "title": "Show the changelog after updating the extension"
+        },
+        {
+                "type": "bool",
                 "name": "dev",
                 "value": false,
                 "title": "Show debug information"
