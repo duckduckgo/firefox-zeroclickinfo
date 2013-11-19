@@ -53,7 +53,7 @@
                 "type": "bool",
                 "name": "thankspage",
                 "value": true,
-                "title": "Show the changelog after updating the extension"
+                "title": "Show changelog in new tab after updating the extension"
         },
         {
                 "type": "bool",
