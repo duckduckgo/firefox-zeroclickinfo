@@ -4,7 +4,7 @@ TMP := /tmp/$(NAME)
 
 xpi:
 	cd /opt/addon-sdk && source bin/activate; cd -
-	cfx xpi
+	/opt/addon-sdk/bin/cfx xpi
 	mv $(NAME).xpi build/
 	git commit -am "built $(VERSION)"
 
