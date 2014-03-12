@@ -1,9 +1,9 @@
 {
-    "description": "DuckDuckGo Plus", 
-    "author": "DuckDuckGo", 
+    "description": "DuckDuckGo Plus",
+    "author": "DuckDuckGo",
     "version": "0.3.15",
-    "fullName": "DuckDuckGo Plus", 
-    "id": "jid1-ZAdIEUB7XOzOJw", 
+    "fullName": "DuckDuckGo Plus",
+    "id": "jid1-ZAdIEUB7XOzOJw",
     "icon": "data/img/icon_48.png",
     "name": "ddg_for_firefox",
     "preferences": [
