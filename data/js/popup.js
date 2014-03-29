@@ -20,9 +20,9 @@
 var use_safe_search = true;
 
 self.port.on('opened', function(options) {
-  
+
   if (options.feeling_ducky === true) {
-    document.getElementById('adv_ducky').checked = true;  
+    document.getElementById('adv_ducky').checked = true;
   }
 
   if (options.ddg_default === true)
@@ -36,7 +36,7 @@ self.port.on('opened', function(options) {
   if (options.zeroclick === true)
     document.getElementById('adv_zeroclick').checked = true;
 
-  if (options.toolbarbutton === true)
+  if (options.toolbar_button === true)
     document.getElementById('adv_toolbarbutton').checked = true;
 
 
@@ -52,9 +52,9 @@ self.port.on('opened', function(options) {
 
   if (options.popup_maximized !== false) {
     self.port.emit('advanced-maximize');
-    document.getElementById('icon_advanced').src = 
+    document.getElementById('icon_advanced').src =
       "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2Fy" +
-       "ZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAA"+ 
+       "ZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAA"+
        "AAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5U"+
        "Y3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6"+
        "eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYxIDY0LjE0MDk0OSwgMjAxMC8x"+
@@ -89,7 +89,7 @@ self.port.on('opened', function(options) {
     document.getElementById('icon_advanced').className = 'maximized';
   } else {
     self.port.emit('advanced-minimize');
-    document.getElementById('icon_advanced').src = 
+    document.getElementById('icon_advanced').src =
       "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2Fy" +
        "ZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAA"+
        "AAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5U"+
@@ -123,8 +123,8 @@ self.port.on('opened', function(options) {
        "ktWRIZgIcFYAAAAASUVORK5CYII=";
     document.getElementById('advanced').style.display = 'none';
     document.getElementById('icon_advanced').className = 'minimized';
-  }  
-  
+  }
+
   document.getElementById('adv_ducky').onclick = ducky_check;
   document.getElementById('default_search').onclick = change_default;
 //document.getElementById('adv_meanings').onclick = meanings_check;
@@ -188,16 +188,16 @@ function search(){
   if (input == '')
       return false;
 
-  
+
   self.port.emit('set-last_search', input);
-  
+
   if (document.getElementById('adv_ducky').checked === true) {
     input = "\\" + input;
   }
 
   var special = '';
 //if(document.getElementById('adv_meanings').checked !== true) {
-//  special = '&d=1'; 
+//  special = '&d=1';
 //}
 
   special += '&kp' + ((use_safe_search) ? '1' : '-1');
@@ -211,7 +211,7 @@ document.getElementById('icon_advanced').onclick = function(){
     self.port.emit('advanced-maximize');
     this.src =
       "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2Fy" +
-       "ZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAA"+ 
+       "ZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAA"+
        "AAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5U"+
        "Y3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6"+
        "eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYxIDY0LjE0MDk0OSwgMjAxMC8x"+
@@ -245,7 +245,7 @@ document.getElementById('icon_advanced').onclick = function(){
     this.className = 'maximized';
   } else {
     self.port.emit('advanced-minimize');
-    this.src = 
+    this.src =
       "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2Fy" +
        "ZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAA"+
        "AAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5U"+
