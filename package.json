@@ -57,6 +57,12 @@
         },
         {
                 "type": "bool",
+                "name": "safe_search",
+                "value": true,
+                "title": "Use Safe Search (Omits objectionable (mostly adult) material)."
+        },
+        {
+                "type": "bool",
                 "name": "dev",
                 "value": false,
                 "title": "Show debug information"
