@@ -17,6 +17,7 @@
 //setTimeout(function(){
 //}, 300);
 
+var use_safe_search = true;
 
 self.port.on('opened', function(options) {
   
@@ -46,6 +47,8 @@ self.port.on('opened', function(options) {
       document.getElementById("search_form_input_homepage").value = options[5];
       document.getElementById("search_form_input_clear").style.background = '#fff url("https://duckduckgo.com/assets/icon_xon.v101.png") no-repeat left center';
   }
+
+  use_safe_search = options[7];
 
   if (options[0] !== false) {
     self.port.emit('advanced-maximize');
@@ -197,6 +200,7 @@ function search(){
 //  special = '&d=1'; 
 //}
 
+  special += '&kp' + (use_safe_search) ? '1' : '-1';
   self.port.emit('open-ddg', "https://duckduckgo.com/?q="+encodeURIComponent(input)+special);
 
   return false;
