@@ -21,11 +21,11 @@ var use_safe_search = true;
 
 self.port.on('opened', function(options) {
   
-  if (options[2] === true) {
+  if (options.feeling_ducky === true) {
     document.getElementById('adv_ducky').checked = true;  
   }
 
-  if (options[1] === true)
+  if (options.ddg_default === true)
     document.getElementById('default_search').checked = true;
   else
     document.getElementById('default_search').checked = false;
@@ -33,24 +33,24 @@ self.port.on('opened', function(options) {
 //if (options[3] === true)
 //  document.getElementById('adv_meanings').checked = true;
 
-  if (options[4] === true)
+  if (options.zeroclick === true)
     document.getElementById('adv_zeroclick').checked = true;
 
-  if (options[6] === true)
+  if (options.toolbarbutton === true)
     document.getElementById('adv_toolbarbutton').checked = true;
 
 
   document.getElementById('search_form_input_homepage').select();
 
   // putting last searched value to the input
-  if (options[5] != undefined || options[5] != '') {
-      document.getElementById("search_form_input_homepage").value = options[5];
+  if (options.last_search != undefined || options.last_search != '') {
+      document.getElementById("search_form_input_homepage").value = options.last_search;
       document.getElementById("search_form_input_clear").style.background = '#fff url("https://duckduckgo.com/assets/icon_xon.v101.png") no-repeat left center';
   }
 
-  use_safe_search = options[7];
+  use_safe_search = options.safe_search;
 
-  if (options[0] !== false) {
+  if (options.popup_maximized !== false) {
     self.port.emit('advanced-maximize');
     document.getElementById('icon_advanced').src = 
       "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2Fy" +
