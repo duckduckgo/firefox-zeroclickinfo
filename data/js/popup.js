@@ -18,6 +18,7 @@
 //}, 300);
 
 var use_safe_search = true;
+var partner_query_addition = '';
 
 self.port.on('opened', function(options) {
 
@@ -49,6 +50,7 @@ self.port.on('opened', function(options) {
   }
 
   use_safe_search = options.safe_search;
+  partner_query_addition = options.partner_query_addition;
 
   if (options.popup_maximized !== false) {
     self.port.emit('advanced-maximize');
@@ -201,6 +203,7 @@ function search(){
 //}
 
   special += '&kp' + ((use_safe_search) ? '1' : '-1');
+  special += partner_query_addition;
   self.port.emit('open-ddg', "https://duckduckgo.com/?q="+encodeURIComponent(input)+special);
 
   return false;
