@@ -3,8 +3,7 @@ VERSION := $(shell python2 -c "import json,sys;print json.loads(sys.stdin.read()
 TMP := /tmp/$(NAME)
 
 xpi:
-	cd /opt/addon-sdk && source bin/activate; cd -
-	/opt/addon-sdk/bin/cfx xpi
+	cfx xpi
 	mv $(NAME).xpi build/
 	git commit -am "built $(VERSION)"
 
