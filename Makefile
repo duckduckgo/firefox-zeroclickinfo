@@ -11,3 +11,10 @@ tmpxpi:
 	cfx xpi
 	mkdir -p $(TMP)
 	mv $(NAME).xpi $(TMP)/
+
+partnerxpi:
+	sed -i "s#PARTNER_QUERY_ADDITION = '';#PARTNER_QUERY_ADDITION = '\&t=$(PARTNER_ID)'#g" lib/main.js
+	sed -i '0,/<Param name="q" value="{searchTerms}"\/>/s//<Param name="q" value="{searchTerms}"\/><Param name="t" value="$(PARTNER_ID)"\/>/' data/search.xml
+	cfx xpi
+	mv $(NAME).xpi $(NAME)-$(PARTNER_ID).xpi
+	echo "Built extension into $(NAME)-$(PARTNER_ID).xpi"
