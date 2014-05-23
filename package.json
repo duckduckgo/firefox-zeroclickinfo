@@ -27,12 +27,6 @@
         },
         {
                 "type": "bool",
-                "name": "addressbar_zci",
-                "value": true,
-                "title": "Answers in address bar (as you type)"
-        },
-        {
-                "type": "bool",
                 "name": "ask_dax",
                 "value": true,
                 "title": "Answers on right click (when you highlight words)"
