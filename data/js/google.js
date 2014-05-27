@@ -25,8 +25,14 @@ var ddgBox = new DuckDuckBox('q', ['rg_s'], 'center_col', true, 'google');
 ddgBox.search = function(query) {
     if (query == undefined)
         return;
-    
-self.port.emit('load-results', {'query': query});
+
+    // ditch the InstantAnswer Box if there is a Knowledge Graph
+    // result
+    if ($('#rhs_block ol').length > 0) {
+        return;
+    }
+
+    self.port.emit('load-results', {'query': query});
     self.port.on('results-loaded', function(data) {
         ddgBox.renderZeroClick(data.response, query);
     });
@@ -42,7 +48,7 @@ function getQuery(direct) {
     var instant = document.getElementsByClassName("gssb_a");
     if (instant.length !== 0 && !direct){
         var selected_instant = instant[0];
-        
+
         var query = selected_instant.childNodes[0].childNodes[0].childNodes[0].
                     childNodes[0].childNodes[0].childNodes[0].innerHTML;
         query = query.replace(/<\/?(?!\!)[^>]*>/gi, '');
@@ -60,7 +66,7 @@ function qsearch(direct) {
     var query = getQuery(direct);
     ddgBox.lastQuery = query;
     ddgBox.search(query);
-} 
+}
 
 // instant search
 $('[name="q"]').keyup(function(e){
