@@ -16,31 +16,32 @@
 
 self.port.emit('get-options');
 var options = [];
+var ddgBox;
 self.port.on('set-options', function(opt){
     options = opt['options'];
-});
+    ddgBox = new DuckDuckBox('q', ['rg_s'], (options['zeroclick_google_right']) ? 'rhs' : 'center_col', true, 'google');
 
-var ddgBox = new DuckDuckBox('q', ['rg_s'], 'center_col', true, 'google');
+    ddgBox.search = function(query) {
+        if (query == undefined)
+            return;
 
-ddgBox.search = function(query) {
-    if (query == undefined)
-        return;
+        // ditch the InstantAnswer Box if there is a Knowledge Graph
+        // result
+        if ($('#rhs_block ol').length > 0) {
+            return;
+        }
 
-    // ditch the InstantAnswer Box if there is a Knowledge Graph
-    // result
-    if ($('#rhs_block ol').length > 0) {
-        return;
+        self.port.emit('load-results', {'query': query});
+        self.port.on('results-loaded', function(data) {
+            ddgBox.renderZeroClick(data.response, query);
+        });
+
+        if (options.dev)
+            console.log("query:", query);
     }
 
-    self.port.emit('load-results', {'query': query});
-    self.port.on('results-loaded', function(data) {
-        ddgBox.renderZeroClick(data.response, query);
-    });
-
-    if (options.dev)
-        console.log("query:", query);
-}
-
+    ddgBox.init();
+});
 
 var ddg_timer;
 
@@ -101,5 +102,4 @@ $('[name="btnG"]').click(function(){
     qsearch();
 });
 
-ddgBox.init();
 
