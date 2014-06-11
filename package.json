@@ -51,6 +51,12 @@
         },
         {
                 "type": "bool",
+                "name": "addressbar_autocomplete",
+                "value": true,
+                "title": "Show suggestions as you type in the address bar"
+        },
+        {
+                "type": "bool",
                 "name": "thankspage",
                 "value": true,
                 "title": "Show changelog in new tab after updating the extension"
