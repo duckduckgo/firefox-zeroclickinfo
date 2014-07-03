@@ -26,8 +26,8 @@ self.port.on('set-options', function(opt){
             return;
 
         // ditch the InstantAnswer Box if there is a Knowledge Graph
-        // result
-        if ($('#rhs_block ol').length > 0) {
+        // result but show when there is a Google+ result
+        if (($('#rhs_block ol').length) > 0 && ($('#rhs_block ol .pplic').length == 0)) {
             return;
         }
 
