@@ -157,6 +157,16 @@ self.port.on('opened', function(options) {
     add_bang('!m');
   }
 
+  var images = document.querySelectorAll('li img');
+  for(var i = 0; i < images.length; i++) {
+    images[i].onmouseover = function() {
+        this.src = BTN_HOVER;
+    }
+
+    images[i].onmouseout = function() {
+        this.src = BTN_NORMAL;
+    }
+  }
 
   document.getElementById("search_form_input_homepage").onkeydown = function(){
     document.getElementById("search_form_input_clear").style.display = 'inline-block';
