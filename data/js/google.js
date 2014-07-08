@@ -25,14 +25,16 @@ self.port.on('set-options', function(opt){
         if (query == undefined)
             return;
 
-        // ditch the InstantAnswer Box if there is a Knowledge Graph
-        // result but show everywhere else
-        if ($('#rhs_block ol .xpdopen').length) > 0) {
-            return;
-        }
-
         self.port.emit('load-results', {'query': query});
         self.port.on('results-loaded', function(data) {
+
+            // ditch the InstantAnswer Box if there is a Knowledge Graph
+            // result but show everywhere else
+
+            if ($('#rhs_block ol .xpdopen').length > 0) {
+                return;
+            }
+
             ddgBox.renderZeroClick(data.response, query);
         });
 
@@ -40,7 +42,9 @@ self.port.on('set-options', function(opt){
             console.log("query:", query);
     }
 
-    ddgBox.init();
+    if ($('#rhs_block ol .xpdopen').length == 0) {
+        ddgBox.init();
+    }
 });
 
 var ddg_timer;
