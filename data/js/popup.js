@@ -100,14 +100,16 @@ self.port.on('opened', function(options) {
     document.getElementById('adv_toolbarbutton').checked = true;
 
 
-  document.getElementById('search_form_input_homepage').select();
 
   // putting last searched value to the input
-  if (options.last_search != undefined && options.last_search !== '' && options.last_search.length == 0) {
-      document.getElementById("search_form_input_homepage").value = options.last_search + 'inserted';
+  if (options.last_search != undefined && options.last_search !== '' && options.last_search.length != 0) {
+      document.getElementById("search_form_input_homepage").value = options.last_search;
       document.getElementById("search_form_input_clear").style.display = 'inline-block';
       document.getElementById("search_button_homepage").className = 'selected';
       document.getElementById('search_form_input_homepage').select();
+  } else {
+      document.getElementById("search_form_input_homepage").value = '';
+      document.getElementById('search_form_input_homepage').focus();
   }
 
   use_safe_search = options.safe_search;
