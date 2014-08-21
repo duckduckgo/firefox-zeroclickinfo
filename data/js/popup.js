@@ -218,7 +218,7 @@ function search(){
 //  special = '&d=1';
 //}
 
-  special += '&kp=' + ((use_safe_search) ? '1' : '-1');
+  // special += '&kp=' + ((use_safe_search) ? '1' : '-1');
   special += partner_query_addition;
   self.port.emit('open-ddg', "https://duckduckgo.com/?q="+encodeURIComponent(input)+special);
 
