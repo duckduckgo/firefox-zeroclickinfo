@@ -15,13 +15,13 @@
  */
 
 #ddg_zeroclick {
-    background: none repeat scroll 0 0 #fafafa;
-    border: 1px solid #dedede;
-    border-radius: 2px;
+    background: none repeat scroll 0 0 #fff;
+    border-top: 4px solid #ce4c15;
+    box-shadow: 0px 1px 5px 1px #ccc;
     display: block;
-    margin-bottom: 20px;
     width: 554px;
     z-index: 10;
+    margin-bottom: 20px;
 }
 
 .ddg_zeroclick_icon {
@@ -64,7 +64,7 @@
 }
 
 #ddg_zeroclick_header img {
-    margin-top: -4px !important;
+    margin-top: -4px;
     float: right;
 }
 
@@ -74,8 +74,8 @@
 
 
 #ddg_zeroclick_image {
-    margin: 10px;
-    float: right;
+    margin: 14px;
+    float: left;
 }
 
 #ddg_zeroclick_image img {
@@ -85,11 +85,22 @@
 
 .ddg_zeroclick_img {
     max-width: 100px;
-    max-height: 100px;
+    max-height: 120px;
+}
+
+#ddg_zeroclick_right_text {
+    padding: 10px;
+}
+
+#ddg_zeroclick_title {
+    margin: 0;
+    margin-top: 13px;
 }
 
 #ddg_zeroclick_abstract {
-    margin: 5px 7px 5px 10px;
+    margin-top: 12px;
+    margin-right: 40px;
+
     word-wrap: break-word;
     font-size: 13px; 
     color: #505050;
@@ -119,15 +130,50 @@
 .first_category {
 }
 
+#ddg_zeroclick_answer {
+    padding: 14px;
+}
+
+#ddg_zeroclick_answer_title {
+    font-size: 24px;
+}
+
+#ddg_zeroclick_answer_category {
+    font-size: 14px;
+    color: #989898;
+}
+
+#ddg_zeroclick_bottom {
+    height: 40px;
+    background-color: #f7f7f7;
+}
+
 #ddg_zeroclick_official_links {
+    color: #767676;
+    padding: 10px;
+    float:left;
+}
+
+#ddg_zeroclick_official_links_img {
+    float: right;
+    position: relative;
+    top: 8px;
+    right: 8px;
 }
 
 #ddg_zeroclick_official_links img{
     display: inline;
-    float: left;
     padding-right: 5px;
     width: 16px;
     height: 16px;
+    position: relative;
+    top: 2px;
+}
+
+
+#ddg_zeroclick_official_links a {
+    text-decoration: none;
+    color: #0037cc;
 }
 
 #ddg_zeroclick_header a {
@@ -265,7 +311,7 @@
 }
 
 #ddg_zeroclick .ddg_more_link {
-    padding-left: 12px;
+    padding-right: 3px;
 }
 
 #ddg_zeroclick .ddg_head {
@@ -282,5 +328,59 @@
     line-height: 0;
 }
 
-#ddg_zeroclick_abstract pre { white-space: pre-wrap; }
+/* Show more/less button */
 
+/* This is the gray circle: */
+.ddg_zeroclick_summary_icon {
+  ext-align: center;
+  display: inline-block;
+  vertical-align: middle;
+  background-color: #d3d3d3;
+  margin-right: 0.25em;
+  position: relative;
+  text-indent: 0.125em;
+  line-height: 1.8;
+  width: 18px;
+  height: 18px;
+  top: -0.1em;
+  border-radius: 50%;
+}
+
+/* This draws the down arrow: */
+.ddg_zeroclick_summary_icon:after {
+  content: '';
+  border: 3px solid transparent;
+  border-top-color: #707070;
+  border-top-width: 5px;
+  border-bottom-width: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -2px;
+  margin-left: -3px;
+  width: 0;
+  height: 0;
+}
+
+/* This modifies the arrow to flip it upside down when it's expanded: */
+.ddg_zeroclick_summary_show_more.ddg_zeroclick_summary_is-expanded .ddg_zeroclick_summary_icon:after {
+  border-top-width: 0;
+  border-top-color: transparent;
+  border-bottom-color: #707070;
+  border-bottom-width: 5px;
+  margin-top: -3px;
+}
+
+.ddg_zeroclick_summary_show_more {
+  cursor: pointer;
+}
+
+.ddg_zeroclick_summary_expand-less,
+.ddg_zeroclick_summary_show_more.ddg_zeroclick_summary_is-expanded .ddg_zeroclick_summary_expand-more {
+  display: none;
+}
+
+.ddg_zeroclick_summary_expand-more,
+.ddg_zeroclick_summary_show_more.ddg_zeroclick_summary_is-expanded .ddg_zeroclick_summary_expand-less {
+  display: inline-block;
+}

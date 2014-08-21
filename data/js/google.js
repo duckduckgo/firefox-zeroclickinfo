@@ -19,7 +19,14 @@ var options = [];
 var ddgBox;
 self.port.on('set-options', function(opt){
     options = opt['options'];
-    ddgBox = new DuckDuckBox('q', ['rg_s'], (options['zeroclick_google_right']) ? 'rhs' : 'center_col', true, 'google');
+    ddgBox = new DuckDuckBox({
+                inputName: 'q',
+                forbiddenIDs: ['rg_s'],
+                hover: true,
+                contentDiv: (options['zeroclick_google_right']) ? 'rhs' : 'center_col',
+                className: 'google',
+                debug: options.dev
+              });
 
     ddgBox.search = function(query) {
         if (query == undefined)

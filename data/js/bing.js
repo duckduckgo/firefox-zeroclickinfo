@@ -20,10 +20,13 @@ self.port.on('set-options', function(opt){
     options = opt['options'];
 });
 
-if (document.getElementById('b_results') !== null)
-    var ddgBox = new DuckDuckBox('q', [], 'b_results', false, 'bing');
-else
-    var ddgBox = new DuckDuckBox('q', [], 'results_container', false, 'bing');
+var ddgBox = new DuckDuckBox({
+                inputName: 'q',
+                forbiddenIDs: [],
+                contentDiv: (document.getElementById('b_results')) ? 'b_results' : 'results_container',
+                className: 'bing',
+                debug: options.dev
+              });
 
 ddgBox.search = function(query) {
 self.port.emit('load-results', {'query': query});
