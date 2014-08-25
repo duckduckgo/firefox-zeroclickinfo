@@ -31,6 +31,11 @@ var ddgBox = new DuckDuckBox({
 ddgBox.search = function(query) {
 self.port.emit('load-results', {'query': query});
     self.port.on('results-loaded', function(data) {
+        // ditch the InstantAnswer Box if there is a Bing Calc one
+        if (document.getElementById('rcCalB') !== null) {
+            return true;
+        }
+
         ddgBox.renderZeroClick(data.response, query);
     });
 

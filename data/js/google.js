@@ -36,10 +36,19 @@ self.port.on('set-options', function(opt){
         self.port.on('results-loaded', function(data) {
 
             // ditch the InstantAnswer Box if there is a Knowledge Graph
-            // result but show everywhere else
+            // result, e.g. superbad
+            if (document.querySelector('#rhs_block ol .xpdopen') !== null) {
+                return true;
+            }
 
-            if ($('#rhs_block ol .xpdopen').length > 0) {
-                return;
+            // ditch the InstantAnswer Box if there is an artist Knowledge
+            // Graph result, e.g. justin bieber
+            if (document.querySelector('#rhs_block ol .rhsvw') !== null) {
+                return true;
+            }
+
+            if (document.querySelector('#center_col .vk_c') !== null) {
+                return true;
             }
 
             ddgBox.renderZeroClick(data.response, query);
