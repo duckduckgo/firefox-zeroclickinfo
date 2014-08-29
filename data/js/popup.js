@@ -260,7 +260,7 @@ function add_bang(bang) {
             inp.value = inp.value.replace(found_bangs[0], bang);
             inp.focus();
         } else {
-            inp.value += bang;
+            inp.value += ' ' + bang;
             search();
         }
     }
