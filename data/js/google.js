@@ -51,6 +51,12 @@ self.port.on('set-options', function(opt){
                 return true;
             }
 
+            // make sure we do not interfere with the Google ads calls.
+            if (window.location.host.match(/google.com\\\/uds/) !== null) {
+                return false;
+            }
+
+
             ddgBox.renderZeroClick(data.response, query);
         });
 
