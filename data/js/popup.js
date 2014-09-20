@@ -101,9 +101,9 @@ self.port.on('opened', function(options) {
 
 
 
-  // putting last searched value to the input
-  if (options.last_search != undefined && options.last_search !== '' && options.last_search.length != 0) {
-      document.getElementById("search_form_input_homepage").value = options.last_search;
+  // putting selected text or last searched value to the input
+  if (options.selected_text || options.last_search != undefined && options.last_search !== '' && options.last_search.length != 0) {
+      document.getElementById("search_form_input_homepage").value = options.selected_text ? options.selected_text : options.last_search;
       document.getElementById("search_form_input_clear").style.display = 'inline-block';
       document.getElementById("search_button_homepage").className = 'selected';
       document.getElementById('search_form_input_homepage').select();
