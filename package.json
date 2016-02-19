@@ -3,9 +3,10 @@
     "author": "DuckDuckGo",
     "version": "0.4.6",
     "fullName": "DuckDuckGo Plus",
-    "id": "jid1-ZAdIEUB7XOzOJw",
+    "id": "jid1-ZAdIEUB7XOzOJw@jetpack",
     "icon": "data/img/icon_48.png",
     "name": "ddg_for_firefox",
+    "main": "lib/main.js",
     "preferences": [
         {
                 "type": "bool",
