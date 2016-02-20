@@ -58,12 +58,6 @@
         },
         {
                 "type": "bool",
-                "name": "thankspage",
-                "value": true,
-                "title": "Show changelog in new tab after updating the extension"
-        },
-        {
-                "type": "bool",
                 "name": "safe_search",
                 "value": true,
                 "title": "Use Safe Search (Omits objectionable (mostly adult) material).",
