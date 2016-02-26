@@ -162,6 +162,14 @@ function search(){
 
   // special += '&kp=' + ((use_safe_search) ? '1' : '-1');
   special += partner_query_addition;
+
+  var os = "o";
+  if (window.navigator.userAgent.indexOf("Windows") != -1) os = "w";
+  if (window.navigator.userAgent.indexOf("Mac") != -1) os = "m";
+  if (window.navigator.userAgent.indexOf("Linux") != -1) os = "l";
+
+  special += '&bext=' + os + 'fp';
+
   self.port.emit('open-ddg', "https://duckduckgo.com/?q="+encodeURIComponent(input)+special);
 
   return false;

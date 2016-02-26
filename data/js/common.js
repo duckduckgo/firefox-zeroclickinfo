@@ -167,17 +167,22 @@ DuckDuckBox.prototype = {
     },
 
     createHeader: function (heading, query) {
+        var os = "o";
+        if (window.navigator.userAgent.indexOf("Windows") != -1) os = "w";
+        if (window.navigator.userAgent.indexOf("Mac") != -1) os = "m";
+        if (window.navigator.userAgent.indexOf("Linux") != -1) os = "l";
+
         return $('<div>', {id: 'ddg_zeroclick_header'})
                        .append($('<a>', {
                                    class: 'ddg_head',
-                                   href: DDG_URL + encodeURIComponent(query)
+                                   href: DDG_URL + encodeURIComponent(query) + '&bext=' + os + 'fc'
                                }).text(heading))
                        .append($('<img>', {
                                    src: HEADER_ICON_URL
                                }))
                        .append($('<a>', {
                                    class: 'ddg_more',
-                                   href: DDG_URL + encodeURIComponent(query)
+                                   href: DDG_URL + encodeURIComponent(query) + '&bext=' + os + 'fc'
                                }).html('See DuckDuckGo results &raquo;'));
 
     },
@@ -497,6 +502,10 @@ DuckDuckBox.prototype = {
       //};
       //
       //abst.append(tmp_div);
+        var os = "o";
+        if (window.navigator.userAgent.indexOf("Windows") != -1) os = "w";
+        if (window.navigator.userAgent.indexOf("Mac") != -1) os = "m";
+        if (window.navigator.userAgent.indexOf("Linux") != -1) os = "l";
 
         var right_text = $('<div>', {id: 'ddg_zeroclick_right_text',
                                      style: (res['Image'] ? 'margin-left: 128px': '')})
@@ -512,7 +521,7 @@ DuckDuckBox.prototype = {
                                     src: 'https://duckduckgo.com//assets/icons/meta/DDG-icon_24x24.png',
                                     id: 'ddg_zeroclick_official_links_img'
                        }).click(function(){
-                           window.location.href = DDG_URL + encodeURIComponent(query);
+                           window.location.href = DDG_URL + encodeURIComponent(query) + '&bext=' + os + 'fc';
                        }));
         result.append(bottom);
 
