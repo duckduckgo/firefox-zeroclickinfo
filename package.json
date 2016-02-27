@@ -1,17 +1,17 @@
 {
     "description": "DuckDuckGo Plus",
     "author": "DuckDuckGo",
-    "version": "0.4.6",
+    "version": "0.5.0",
     "fullName": "DuckDuckGo Plus",
     "id": "jid1-ZAdIEUB7XOzOJw@jetpack",
     "icon": "data/img/icon_48.png",
-    "name": "ddg_for_firefox",
+    "name": "duckduckgo_plus",
     "main": "lib/main.js",
     "preferences": [
         {
                 "type": "bool",
                 "name": "zeroclick",
-                "value": true,
+                "value": false,
                 "title": "Answers on Google/Bing (on top of links)"
         },
         {
