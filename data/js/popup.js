@@ -40,8 +40,6 @@ self.port.on('opened', function(options) {
 //if (options[3] === true)
 //  document.getElementById('adv_meanings').checked = true;
 
-  if (options.zeroclick === true)
-    document.getElementById('adv_zeroclick').checked = true;
 
   if (options.toolbar_button === true)
     document.getElementById('adv_toolbarbutton').checked = true;
@@ -79,7 +77,6 @@ self.port.on('opened', function(options) {
   document.getElementById('adv_ducky').onclick = ducky_check;
   document.getElementById('default_search').onclick = change_default;
 //document.getElementById('adv_meanings').onclick = meanings_check;
-  document.getElementById('adv_zeroclick').onclick = zeroclick_check;
   document.getElementById('adv_toolbarbutton').onclick = toolbarbutton_check;
 
   document.getElementById('search_form_input_clear').onclick = search_input_clear;
@@ -224,10 +221,6 @@ function ducky_check(){
 ////function meanings_check(){
 ////  self.port.emit('meanings-swap', document.getElementById('adv_ducky').checked);
 ////}
-
-function zeroclick_check(){
-  self.port.emit('zeroclick-swap', document.getElementById('adv_zeroclick').checked);
-}
 
 function change_default(){
   self.port.emit('swap-default', document.getElementById('default_search').checked);
