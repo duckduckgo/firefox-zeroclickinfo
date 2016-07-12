@@ -1,7 +1,7 @@
 {
     "description": "DuckDuckGo Plus",
     "author": "DuckDuckGo",
-    "version": "0.5.2",
+    "version": "0.5.4",
     "title": "DuckDuckGo Plus",
     "id": "jid1-ZAdIEUB7XOzOJw@jetpack",
     "icon": "data/img/icon_48.png",
@@ -56,6 +56,18 @@
                 "value": true,
                 "title": "Use Safe Search (Omits objectionable (mostly adult) material).",
                 "hidden": true
+        },
+        {
+                "type": "bool",
+                "name": "no_popup",
+                "value": false,
+                "title": "Remove annoying popups"
+        },
+        {
+                "type": "bool",
+                "name": "atb_param",
+                "value": false,
+                "title": "Add ATB parameters to DuckDuckGo requests"
         },
         {
                 "type": "bool",
