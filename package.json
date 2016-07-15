@@ -61,7 +61,7 @@
                 "type": "bool",
                 "name": "no_popup",
                 "value": false,
-                "title": "Remove annoying popups"
+                "title": "Remove annoying Google marketing popups"
         },
         {
                 "type": "bool",
