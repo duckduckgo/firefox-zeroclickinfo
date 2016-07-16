@@ -66,8 +66,9 @@
         {
                 "type": "bool",
                 "name": "atb_param",
-                "value": false,
-                "title": "Add ATB parameters to DuckDuckGo requests"
+                "value": true,
+                "title": "Add ATB parameters to DuckDuckGo requests",
+                "hidden": true
         },
         {
                 "type": "bool",
