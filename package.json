@@ -4,7 +4,10 @@
     "version": "0.5.4",
     "title": "DuckDuckGo Plus",
     "id": "jid1-ZAdIEUB7XOzOJw@jetpack",
-    "icon": "data/img/icon_48.png",
+    "icon": {
+      "48": "icon_48.png",
+      "64": "icon_64.png"
+    },
     "name": "duckduckgo_plus",
     "main": "lib/main.js",
     "preferences": [
