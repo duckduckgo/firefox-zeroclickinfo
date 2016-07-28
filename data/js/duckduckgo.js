@@ -1,15 +1,14 @@
 self.port.emit('loaded');
 self.port.on('on-install', function() {
 
-  var i = new Image();
-  i.src = 'https://duckduckgo.com/t/exti?' + Math.ceil(Math.random() * 1e7);
-
-  //////////////////
-  // success celebreation
   var atb = document.getElementById('atb-extension-overlay');
 
-  // if no atb wrapper, no celebration
+  // if that div doesn't exist on the page, they didn't install
+  // from duckduckgo.com, so don't show the success screen.
   if (!atb) { return; }
+
+  var i = new Image();
+  i.src = 'https://duckduckgo.com/t/exti?' + Math.ceil(Math.random() * 1e7);
 
   // create canvas
   var canvas = document.createElement('canvas');
@@ -18,6 +17,10 @@ self.port.on('on-install', function() {
   canvas.className = 'atb-extension-confetti';
   atb.appendChild(canvas);
 
+  // confetti animation from:
+  // https://iprodev.com/confetti-animation-javascript/
+  // http://codepen.io/iprodev/pen/azpWBr
+  // MIT Licensed
   var retina = window.devicePixelRatio,
     // Math shorthands
     PI = Math.PI,
@@ -410,6 +413,7 @@ self.port.on('on-install', function() {
     confetti.resize();
   });
 
+  // show the success text on top of the confetti:
   var success = document.getElementById('atb-extension-overlay__success');
   if (success) {
     success.className += ' is-showing';
