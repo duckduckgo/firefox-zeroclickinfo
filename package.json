@@ -1,7 +1,7 @@
 {
     "description": "DuckDuckGo Plus",
     "author": "DuckDuckGo",
-    "version": "0.5.5",
+    "version": "0.5.6",
     "title": "DuckDuckGo Plus",
     "id": "jid1-ZAdIEUB7XOzOJw@jetpack",
     "icon": {
@@ -63,7 +63,7 @@
         {
                 "type": "bool",
                 "name": "no_popup",
-                "value": false,
+                "value": true,
                 "title": "Remove annoying Google marketing popups"
         },
         {
