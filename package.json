@@ -13,12 +13,6 @@
     "preferences": [
         {
                 "type": "bool",
-                "name": "zeroclick_google_right",
-                "value": false,
-                "title": "Show Answers in right panel on Google"
-        },
-        {
-                "type": "bool",
                 "name": "ddg_default",
                 "value": true,
                 "title": "DuckDuckGo as default (in search box and address bar)"
