@@ -10,6 +10,9 @@
     },
     "name": "duckduckgo_plus",
     "main": "lib/main.js",
+    "permissions": {
+      "multiprocess": true
+    },
     "preferences": [
         {
                 "type": "bool",
