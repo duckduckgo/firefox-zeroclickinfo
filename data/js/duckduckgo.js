@@ -1,12 +1,6 @@
 // grab the ATB param from the html element's class
 function getATBParam() {
-  var htmlClasslist = document.querySelector("html").classList;
-  for (var i = 0; i < htmlClasslist.length; i++) {
-    var cls = htmlClasslist[i];
-    if (cls.match(/^atb-/)) {
-      return cls.replace(/^atb-/, '');
-    }
-  }
+  return document.querySelector('html').getAttribute('data-atb');
 }
 
 var atbParam = getATBParam();
