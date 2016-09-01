@@ -1,4 +1,10 @@
-self.port.emit('loaded');
+// grab the ATB param from the html element's class
+function getATBParam() {
+  return document.querySelector('html').getAttribute('data-atb');
+}
+
+var atbParam = getATBParam();
+self.port.emit('loaded', atbParam);
 self.port.on('on-install', function() {
 
   var atb = document.getElementById('atb-extension-overlay');
