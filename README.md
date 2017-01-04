@@ -28,3 +28,14 @@ You can easily automate both these steps by running
 which will do both steps for you and provided that you have the [Add-on
 SDK](https://developer.mozilla.org/en-US/Add-ons/SDK) installed it will try to
 build it for you into a file `ddg_for_firefox-partnerid.xpi`.
+
+
+Dependencies
+--------------
+
+jpm is required.
+
+- Install through node: `npm install jpm`
+- Update PATH: `export PATH="$HOME/node_modules/.bin/:$PATH"`
+
+Find more information on [MDN](https://developer.mozilla.org/en-US/Add-ons/SDK/Tools/jpm)
