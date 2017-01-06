@@ -4,7 +4,7 @@ TMP := /tmp/$(NAME)
 
 xpi:
 	jpm xpi
-	-rm build/
+	rm -rf build/
 	mkdir -p build/ && mv $(NAME).xpi build/
 	git commit -am "built $(VERSION)"
 
