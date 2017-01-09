@@ -31,6 +31,10 @@ self.port.on('opened', function(options) {
     document.getElementById('adv_ducky').checked = true;
   }
 
+  if (options.privacyBadger === true) {
+    document.getElementById('privacy-badger').checked = true;
+  }
+
   if (options.ddg_default === true) {
     document.getElementById('default_search').checked = true;
   } else {
