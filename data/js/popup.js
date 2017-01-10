@@ -140,6 +140,10 @@ self.port.on('opened', function(options) {
     self.port.emit('open-ddg', "http://duckduckgo.com/bang.html");
   }
 
+  document.getElementById('privacy-badger').onclick = function(){
+    self.port.emit('privacy-badger', "http://duckduckgo.com/bang.html");
+  }
+
 });
 
 
