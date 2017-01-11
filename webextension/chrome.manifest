@@ -1,0 +1,55 @@
+{
+    "name": "DuckDuckGo for Chrome",
+    "version": "42.7.5",
+    "description": "DuckDuckGo enhancements for Chrome.",
+    "icons": {
+        "16": "img/icon_16.png",
+        "48": "img/icon_48.png",
+        "128": "img/icon_128.png"
+    },
+    "manifest_version": 2,
+    "browser_action": {
+        "default_icon": {
+            "19": "img/icon_19.png",
+            "38": "img/icon_38.png"
+        },
+        "default_popup": "html/popup.html"
+    },
+    "commands": {
+      "_execute_browser_action": {
+        "suggested_key": {
+          "default": "Alt+G",
+          "mac": "Alt+G",
+          "linux": "Alt+G",
+          "windows": "Alt+G"
+        }
+      }
+    },
+    "omnibox": {"keyword": "d"},
+    "options_page": "html/options.html",
+    "background": {
+            "scripts": ["js/background.js"]
+    },
+    "chrome_settings_overrides": {
+      "search_provider": {
+        "encoding": "UTF-8",
+        "favicon_url": "https://duckduckgo.com/favicon.ico",
+        "is_default": true,
+        "keyword": "duckduckgo.com",
+        "name": "DuckDuckGo Search",
+        "search_url": "https://duckduckgo.com/?q={searchTerms}"
+      }
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://*.duckduckgo.com/*", "https://duckduckgo.com/*"],
+        "css": ["css/noatb.css"]
+      }
+    ],
+    "permissions": [
+        "contextMenus",
+        "webRequest",
+        "webRequestBlocking",
+        "*://*.duckduckgo.com/"
+    ]
+}
