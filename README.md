@@ -46,20 +46,20 @@ Testing Checklist
 
 Installing
 
-[] Extension installs 
+- [ ] Extension installs 
 
 Popup
 
-[ ] Popup opens
+- [ ] Popup opens
 
-[ ] Search box is empty
+- [ ] Search box is empty
 
-[ ] Search works and defaults to DDG
+- [ ] Search works and defaults to DDG
 
-[ ] Click a bang, the bang is added to the search box
+- [ ] Click a bang, the bang is added to the search box
 
-[ ] Search with bang works
+- [ ] Search with bang works
 
-[ ] Expand/collapse button on right of search hides the bang options
+- [ ] Expand/collapse button on right of search hides the bang options
 
-[ ] Click "I'm feeling ducky" and search. Redirects to first organic
+- [ ] Click "I'm feeling ducky" and search. Redirects to first organic
