@@ -44,7 +44,7 @@ Find more information on [MDN](https://developer.mozilla.org/en-US/Add-ons/SDK/T
 Testing Checklist
 -----------------
 
-Installing
+Since we don't yet have automated tests, here is a checklist of manual tests to perform:
 
 - [ ] Extension installs
 
