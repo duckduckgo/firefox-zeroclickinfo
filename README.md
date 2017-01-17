@@ -46,9 +46,7 @@ Testing Checklist
 
 Installing
 
-- [ ] Extension installs 
-
-Popup
+- [ ] Extension installs
 
 - [ ] Popup opens
 
