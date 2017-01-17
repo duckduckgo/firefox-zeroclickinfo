@@ -39,3 +39,27 @@ jpm is required.
 - Update PATH: `export PATH="$HOME/node_modules/.bin/:$PATH"`
 
 Find more information on [MDN](https://developer.mozilla.org/en-US/Add-ons/SDK/Tools/jpm)
+
+
+Testing Checklist
+-----------------
+
+Installing
+
+[] Extension installs 
+
+Popup
+
+[ ] Popup opens
+
+[ ] Search box is empty
+
+[ ] Search works and defaults to DDG
+
+[ ] Click a bang, the bang is added to the search box
+
+[ ] Search with bang works
+
+[ ] Expand/collapse button on right of search hides the bang options
+
+[ ] Click "I'm feeling ducky" and search. Redirects to first organic
