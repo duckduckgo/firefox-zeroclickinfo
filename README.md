@@ -39,3 +39,33 @@ jpm is required.
 - Update PATH: `export PATH="$HOME/node_modules/.bin/:$PATH"`
 
 Find more information on [MDN](https://developer.mozilla.org/en-US/Add-ons/SDK/Tools/jpm)
+
+
+Testing Checklist
+-----------------
+
+Since we don't yet have automated tests, here is a checklist of manual tests to perform:
+
+- [ ] Extension installs
+
+- [ ] Popup opens
+
+- [ ] Search box is empty
+
+- [ ] Search works and defaults to DDG
+
+- [ ] Click a bang, the bang is added to the search box
+
+- [ ] Click another bang, the bang in the search box is replaced
+
+- [ ] Search with bang works
+
+- [ ] Expand/collapse button on right of search hides the bang options
+
+- [ ] Click "I'm feeling ducky" and search. Redirects to first organic
+
+- [ ] Modified options, both in the popup and in the options.html page, are saved
+
+- [ ] When safe search is unchecked, the URL for a search contains the `&kp=-1` parameter
+
+- [ ] When "remember last search" is checked, on popup open the search box will contain the last performed search
