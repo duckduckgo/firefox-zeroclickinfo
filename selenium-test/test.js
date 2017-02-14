@@ -28,26 +28,58 @@ var wd = new webdriver.Builder()
 	.setFirefoxOptions(options)
 	.build();
 
-wd.get('http://google.com');
-wd.findElement({id: 'gb_70'}).click().then(function() {
-        wd.wait(until.elementLocated( By.id('Email')), 2000).then(function(emailBox) {
-            emailBox.sendKeys(ddgEmail);
-            wd.findElement({id: 'next'}).click();
+var ids = {
+    loginBtn: 'gb_70',
+    emailBox: 'Email',
+    emailSubmitBtn: 'next',
+    passwdBox: 'Passwd',
+    passSubmitBtn: 'signIn',
+    userIcon: 'gb_9a gbii',
+    userModal: 'gb_mb gb_ha gb_g',
+    signOutBtn: 'gb_71'
+};
 
-            wd.wait(until.elementLocated( By.id('Passwd')), 2000).then(function(passwordBox){
+wd.get('http://google.com');
+wd.findElement({id: ids.loginBtn}).click().then(function() {
+
+        wd.wait(until.elementLocated( By.id(ids.emailBox)), 2000).then(function(emailBox) {
+            emailBox.sendKeys(ddgEmail);
+
+            wd.findElement({id: ids.emailSubmitBtn}).click();
+
+            wd.wait(until.elementLocated( By.id(ids.passwdBox)), 2000).then(function(passwordBox){
                 wd.wait(until.elementIsVisible(passwordBox), 2000).then(function(passwordBox){
                     passwordBox.sendKeys(ddgEmailPw);
-                    wd.findElement({id: 'signIn'}).click();
+                    wd.findElement({id: ids.passSubmitBtn}).click();
 
-                    wd.wait(until.elementLocated( By.className('gb_9a gbii')), 2000, 'User icon should exist').then(function(userIcon) {
-                        wd.sleep(2000).then(function(){
+                    wd.wait(until.elementLocated( By.className(ids.userIcon)), 4000, 'User icon should exist').then(function(userIcon) {
+                        // wait for page to completely load
+                        wd.sleep(4000).then(function(){
                             wd.findElement(By.className('gb_9a gbii')).click();
                             wd.findElement(By.className('gb_9a gbii')).click();
+                            
+                            // wait for modal
+                            wd.sleep(4000).then(function(){
+                                wd.takeScreenshot().then(function(img){
+                                    fs.writeFile('modal.png', img, 'base64');
+                                });
 
-                            wd.wait(until.elementLocated( By.id('signout')), 2000, 'Signout button should exist').then( function(logoutBtn){
-                                wd.wait(until.elementIsVisible(logoutBtn), 2000).then( function(logoutBtn) {
-                                    logoutBtn.click();
-                                    wd.wait(until.elementLocated( By.id('gb_70')), 2000, 'Signin button should exist');
+                                wd.wait(until.elementLocated( By.className(ids.userModal)), 4000, 'Signout modal should exist').then( function(signoutModal){
+                                    wd.wait(until.elementIsVisible(signoutModal), 4000).then( function() {
+
+                                         wd.wait(until.elementLocated( By.id(ids.signOutBtn)), 2000, 'Signin button should exist').then(function(signoutBtn){
+                                                wd.findElement(By.id(ids.signOutBtn)).click().then(function(){
+                                                    
+                                                    // wait for logout and take screenshot to verify
+                                                    wd.sleep(5000).then(function(){ 
+                                                        wd.takeScreenshot().then(function(img2){
+                                                            fs.writeFile('end.png', img2, 'base64');
+                                                            wd.close();
+                                                        });
+                                                    });
+                                                });
+                                        });
+                                    });
                                 });
                             });
 
