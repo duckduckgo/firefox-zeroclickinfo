@@ -14,7 +14,7 @@
     "multiprocess": true
   },
   "scripts": {
-    "test": "export PATH=$PATH:$PWD/node_modules/geckodriver/bin && make xpi && node selenium-test/test.js"
+    "test": "export PATH=$PATH:$PWD/node_modules/geckodriver/bin && node selenium-test/test.js"
   },
   "preferences": [
     {
