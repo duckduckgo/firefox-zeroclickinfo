@@ -71,7 +71,9 @@ wd.findElement({id: ids.loginBtn}).click().then(function() {
                                                 wd.findElement(By.id(ids.signOutBtn)).click().then(function(){
                                                     
                                                     // wait for logout and take screenshot to verify
-                                                    wd.sleep(5000).then(function(){ 
+                                                    wd.sleep(5000).then(function(){
+                                                        // check to see that login button is back
+                                                        wd.wait(until.elementLocated(By.id(ids.loginBtn)), 2000);
                                                         wd.takeScreenshot().then(function(img2){
                                                             fs.writeFile('end.png', img2, 'base64');
                                                             wd.close();
