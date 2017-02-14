@@ -39,14 +39,16 @@ wd.findElement({id: 'gb_70'}).click().then(function() {
                     passwordBox.sendKeys(ddgEmailPw);
                     wd.findElement({id: 'signIn'}).click();
 
-                    wd.wait(until.elementLocated( By.className('gb_b gb_eb gb_R')), 2000, 'User icon should exist').then(function(userIcon) {
-                        userIcon.click().then(function() {
-                            wd.takeScreenshot( ).then(function(img) {
-                                fs.writeFile("screenshot.png", img, 'base64');
-                            });
+                    wd.wait(until.elementLocated( By.className('gb_9a gbii')), 2000, 'User icon should exist').then(function(userIcon) {
+                        wd.wait(until.elementIsVisible(userIcon), 2000).then(function(){
+                            userIcon.click().then(function() {
+                                wd.takeScreenshot( ).then(function(img) {
+                                    fs.writeFile("screenshot.png", img, 'base64');
+                                });
 
-                            wd.getPageSource().then(function(page) {
-                                fs.writeFile('source.html', page);
+                                wd.getPageSource().then(function(page) {
+                                    fs.writeFile('source.html', page);
+                                });
                             });
                         });
 
