@@ -40,25 +40,18 @@ wd.findElement({id: 'gb_70'}).click().then(function() {
                     wd.findElement({id: 'signIn'}).click();
 
                     wd.wait(until.elementLocated( By.className('gb_9a gbii')), 2000, 'User icon should exist').then(function(userIcon) {
-                        wd.wait(until.elementIsVisible(userIcon), 2000).then(function(){
-                            userIcon.click().then(function() {
-                                wd.takeScreenshot( ).then(function(img) {
-                                    fs.writeFile("screenshot.png", img, 'base64');
-                                });
+                        wd.sleep(2000).then(function(){
+                            wd.findElement(By.className('gb_9a gbii')).click();
+                            wd.findElement(By.className('gb_9a gbii')).click();
 
-                                wd.getPageSource().then(function(page) {
-                                    fs.writeFile('source.html', page);
+                            wd.wait(until.elementLocated( By.id('signout')), 2000, 'Signout button should exist').then( function(logoutBtn){
+                                wd.wait(until.elementIsVisible(logoutBtn), 2000).then( function(logoutBtn) {
+                                    logoutBtn.click();
+                                    wd.wait(until.elementLocated( By.id('gb_70')), 2000, 'Signin button should exist');
                                 });
                             });
-                        });
 
-                        wd.wait(until.elementLocated( By.id('signout')), 2000, 'Signout button should exist').then( function(logoutBtn){
-                            wd.wait(until.elementIsVisible(logoutBtn), 2000).then( function(logoutBtn) {
-                                logoutBtn.click();
-                                wd.wait(until.elementLocated( By.id('gb_70')), 2000, 'Signin button should exist');
-                            });
                         });
-
                     });
                 });
             });
