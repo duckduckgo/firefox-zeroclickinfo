@@ -1,80 +1,83 @@
 {
-    "description": "DuckDuckGo Plus",
-    "author": "DuckDuckGo",
-    "version": "1.0.0",
-    "title": "DuckDuckGo Plus",
-    "id": "jid1-ZAdIEUB7XOzOJw@jetpack",
-    "icon": {
-      "48": "icon_48.png",
-      "64": "icon_64.png"
+  "description": "DuckDuckGo Plus",
+  "author": "DuckDuckGo",
+  "version": "1.0.0",
+  "title": "DuckDuckGo Plus",
+  "id": "jid1-ZAdIEUB7XOzOJw@jetpack",
+  "icon": {
+    "48": "icon_48.png",
+    "64": "icon_64.png"
+  },
+  "name": "duckduckgo_plus",
+  "main": "lib/main.js",
+  "permissions": {
+    "multiprocess": true
+  },
+  "preferences": [
+    {
+      "type": "bool",
+      "name": "ddg_default",
+      "value": true,
+      "title": "DuckDuckGo as default (in search box and address bar)"
     },
-    "name": "duckduckgo_plus",
-    "main": "lib/main.js",
-    "permissions": {
-      "multiprocess": true
+    {
+      "type": "bool",
+      "name": "toolbar_button",
+      "value": true,
+      "title": "Show toolbar button (next to address bar)"
     },
-    "preferences": [
-        {
-                "type": "bool",
-                "name": "ddg_default",
-                "value": true,
-                "title": "DuckDuckGo as default (in search box and address bar)"
-        },
-        {
-                "type": "bool",
-                "name": "toolbar_button",
-                "value": true,
-                "title": "Show toolbar button (next to address bar)"
-        },
-        {
-                "type": "bool",
-                "name": "ask_dax",
-                "value": true,
-                "title": "Answers on right click (when you highlight words)"
-        },
-        {
-                "type": "bool",
-                "name": "use_hotkey",
-                "value": true,
-                "title": "Hotkey (Alt+G)"
-        },
-        {
-                "type": "bool",
-                "name": "remember_last_search",
-                "value": true,
-                "title": "Remember last search in the popup"
-        },
-        {
-                "type": "bool",
-                "name": "addressbar_autocomplete",
-                "value": true,
-                "title": "Show suggestions as you type in the address bar"
-        },
-        {
-                "type": "bool",
-                "name": "safe_search",
-                "value": true,
-                "title": "Use Safe Search (Omits objectionable (mostly adult) material).",
-                "hidden": true
-        },
-        {
-                "type": "bool",
-                "name": "no_popup",
-                "value": true,
-                "title": "Remove annoying Google marketing popups"
-        },
-        {
-                "type": "bool",
-                "name": "atb_param",
-                "value": true,
-                "title": "Add ATB parameters to DuckDuckGo requests",
-                "hidden": true
-        },
-        {
-                "type": "bool",
-                "name": "dev",
-                "value": false,
-                "title": "Show debug information"
-        }
-    ]
+    {
+      "type": "bool",
+      "name": "ask_dax",
+      "value": true,
+      "title": "Answers on right click (when you highlight words)"
+    },
+    {
+      "type": "bool",
+      "name": "use_hotkey",
+      "value": true,
+      "title": "Hotkey (Alt+G)"
+    },
+    {
+      "type": "bool",
+      "name": "remember_last_search",
+      "value": true,
+      "title": "Remember last search in the popup"
+    },
+    {
+      "type": "bool",
+      "name": "addressbar_autocomplete",
+      "value": true,
+      "title": "Show suggestions as you type in the address bar"
+    },
+    {
+      "type": "bool",
+      "name": "safe_search",
+      "value": true,
+      "title": "Use Safe Search (Omits objectionable (mostly adult) material).",
+      "hidden": true
+    },
+    {
+      "type": "bool",
+      "name": "no_popup",
+      "value": true,
+      "title": "Remove annoying Google marketing popups"
+    },
+    {
+      "type": "bool",
+      "name": "atb_param",
+      "value": true,
+      "title": "Add ATB parameters to DuckDuckGo requests",
+      "hidden": true
+    },
+    {
+      "type": "bool",
+      "name": "dev",
+      "value": false,
+      "title": "Show debug information"
+    }
+  ],
+  "dependencies": {
+    "selenium-webdriver": "^3.0.1"
+  }
 }
