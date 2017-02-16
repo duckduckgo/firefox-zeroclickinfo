@@ -16,12 +16,9 @@ if(!ddgEmail || !ddgEmailPw){
     process.exit(1);
 }
 
-nodemailer.sendmail = true;
 
 let transporter = nodemailer.createTransport({
-        host: 'smtp.gmail.com',
-        port: 465,
-        secure: true, 
+        service: 'gmail',
         auth: {
             user: ddgEmail,
             pass: ddgEmailPw
