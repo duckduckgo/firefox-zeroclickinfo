@@ -81,6 +81,7 @@
     }
   ],
   "dependencies": {
+    "geckodriver": "^1.4.0",
     "selenium-webdriver": "^3.0.1"
   }
 }
