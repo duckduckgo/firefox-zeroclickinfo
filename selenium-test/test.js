@@ -22,8 +22,11 @@ var transporter = nodemailer.createTransport({
         auth: {
             user: ddgEmail,
             pass: ddgEmailPw
-        }
+        },
+        debug: true
 });
+
+transporter.on('log', console.log);
 
 var mailOptions = {
         from: ddgEmail, // sender address
