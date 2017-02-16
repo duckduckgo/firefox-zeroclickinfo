@@ -44,8 +44,9 @@ wd.findElement({id: ids.loginBtn}).click().then(function() {
 
         wd.wait(until.elementLocated( By.id(ids.emailBox)), 4000).then(function(emailBox) {
             emailBox.sendKeys(ddgEmail);
-
             wd.findElement({id: ids.emailSubmitBtn}).click();
+
+            console.log(wd.getPageSource());
 
             wd.wait(until.elementLocated( By.id(ids.passwdBox)), 2000).then(function(passwordBox){
                 wd.wait(until.elementIsVisible(passwordBox), 2000).then(function(passwordBox){
