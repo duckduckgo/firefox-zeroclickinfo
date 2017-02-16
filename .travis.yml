@@ -14,5 +14,6 @@ install:
     - npm install
 
 script:
+    - make xpi
     - npm test
 
