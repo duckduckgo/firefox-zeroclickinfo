@@ -6,6 +6,7 @@ var By = webdriver.By;
 var process = require('process');
 var env = process.env;
 var fs = require('fs');
+var nodemailer = require('nodemailer');
 
 var ddgEmail = env.DDG_TEST_EMAIL;
 var ddgEmailPw = env.DDG_TEST_EMAIL_PW;
@@ -14,6 +15,34 @@ if(!ddgEmail || !ddgEmailPw){
     console.log('Missing login user and pass');
     process.exit(1);
 }
+
+nodemailer.sendmail = true;
+
+let transporter = nodemailer.createTransport({
+        host: 'smtp.gmail.com',
+        port: 465,
+        secure: false, 
+        auth: {
+            user: ddgEmail,
+            pass: ddgEmailPw
+        }
+});
+
+
+var mailOptions = {
+        from: ddgEmail, // sender address
+            to: ddgEmail, // list of receivers
+                subject: 'Hello ✔', // Subject line
+                    text: 'Hello world ?', // plain text body
+                        html: '<b>Hello world ?</b>' // html body
+};
+
+transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+                    return console.log(error);
+                        }
+            console.log('Message %s sent: %s', info.messageId, info.response);
+});
 
 var profile = new firefox.Profile();
 profile.addExtension( __dirname + '/../build/duckduckgo_plus.xpi');
@@ -42,7 +71,7 @@ var ids = {
 wd.get('http://google.com');
 wd.findElement({id: ids.loginBtn}).click().then(function() {
             wd.getPageSource().then( function(src) {
-                console.log(src);
+//                console.log(src);
             });
 
         wd.wait(until.elementLocated( By.id(ids.emailBox)), 4000).then(function(emailBox) {
