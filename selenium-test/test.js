@@ -42,7 +42,7 @@ var ids = {
 wd.get('http://google.com');
 wd.findElement({id: ids.loginBtn}).click().then(function() {
 
-        wd.wait(until.elementLocated( By.id(ids.emailBox)), 2000).then(function(emailBox) {
+        wd.wait(until.elementLocated( By.id(ids.emailBox)), 4000).then(function(emailBox) {
             emailBox.sendKeys(ddgEmail);
 
             wd.findElement({id: ids.emailSubmitBtn}).click();
