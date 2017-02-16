@@ -21,7 +21,7 @@ nodemailer.sendmail = true;
 let transporter = nodemailer.createTransport({
         host: 'smtp.gmail.com',
         port: 465,
-        secure: false, 
+        secure: true, 
         auth: {
             user: ddgEmail,
             pass: ddgEmailPw
