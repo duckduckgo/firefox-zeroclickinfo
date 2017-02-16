@@ -17,28 +17,27 @@ if(!ddgEmail || !ddgEmailPw){
 }
 
 
-let transporter = nodemailer.createTransport({
-        service: 'gmail',
+var transporter = nodemailer.createTransport({
+        service: 'Gmail',
         auth: {
             user: ddgEmail,
-            password: ddgEmailPw
+            pass: ddgEmailPw
         }
 });
 
-
 var mailOptions = {
         from: ddgEmail, // sender address
-            to: ddgEmail, // list of receivers
-                subject: 'Hello ✔', // Subject line
-                    text: 'Hello world ?', // plain text body
-                        html: '<b>Hello world ?</b>' // html body
+        to: ddgEmail, // list of receivers
+        subject: 'Hello ✔', // Subject line
+        text: 'Hello world ?', // plain text body
+        html: '<b>Hello world ?</b>' // html body
 };
 
 transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
-                    return console.log(error);
-                        }
-            console.log('Message %s sent: %s', info.messageId, info.response);
+            return console.log(error);
+        }
+        console.log('Message %s sent: %s', info.messageId, info.response);
 });
 
 var profile = new firefox.Profile();
