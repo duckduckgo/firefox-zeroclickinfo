@@ -41,14 +41,14 @@ var ids = {
 
 wd.get('http://google.com');
 wd.findElement({id: ids.loginBtn}).click().then(function() {
+            wd.getPageSource().then( function(src) {
+                console.log(src);
+            });
 
         wd.wait(until.elementLocated( By.id(ids.emailBox)), 4000).then(function(emailBox) {
             emailBox.sendKeys(ddgEmail);
             wd.findElement({id: ids.emailSubmitBtn}).click();
 
-            wd.getPageSource().then( function(src) {
-                console.log(src);
-            });
 
             wd.wait(until.elementLocated( By.id(ids.passwdBox)), 2000).then(function(passwordBox){
                 wd.wait(until.elementIsVisible(passwordBox), 2000).then(function(passwordBox){
