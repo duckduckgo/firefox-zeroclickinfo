@@ -16,33 +16,6 @@ if(!ddgEmail || !ddgEmailPw){
     process.exit(1);
 }
 
-
-var transporter = nodemailer.createTransport({
-        service: 'Gmail',
-        auth: {
-            user: ddgEmail,
-            pass: ddgEmailPw
-        },
-        debug: true
-});
-
-transporter.on('log', console.log);
-
-var mailOptions = {
-        from: ddgEmail, // sender address
-        to: ddgEmail, // list of receivers
-        subject: 'Hello ✔', // Subject line
-        text: 'Hello world ?', // plain text body
-        html: '<b>Hello world ?</b>' // html body
-};
-
-transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-            return console.log(error);
-        }
-        console.log('Message %s sent: %s', info.messageId, info.response);
-});
-
 var profile = new firefox.Profile();
 profile.addExtension( __dirname + '/../build/duckduckgo_plus.xpi');
 
@@ -69,10 +42,6 @@ var ids = {
 
 wd.get('http://google.com');
 wd.findElement({id: ids.loginBtn}).click().then(function() {
-            wd.getPageSource().then( function(src) {
-//                console.log(src);
-            });
-
         wd.wait(until.elementLocated( By.id(ids.emailBox)), 4000).then(function(emailBox) {
             emailBox.sendKeys(ddgEmail);
             wd.findElement({id: ids.emailSubmitBtn}).click();
