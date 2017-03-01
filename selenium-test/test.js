@@ -64,7 +64,7 @@ wd.findElement({id: ids.loginBtn}).click().then(function() {
                                     fs.writeFile('modal.png', img, 'base64');
                                 });
 
-                                wd.wait(until.elementLocated( By.className(ids.userModal)), 4000, 'Signout modal should exist').then( function(signoutModal){
+                                wd.wait(until.elementLocated( By.xpath("//div[*/@aria-label='Account Information']")), 4000, 'Signout modal should exist').then( function(signoutModal){
                                     wd.wait(until.elementIsVisible(signoutModal), 4000).then( function() {
 
                                          wd.wait(until.elementLocated( By.id(ids.signOutBtn)), 2000, 'Signin button should exist').then(function(signoutBtn){
@@ -77,6 +77,7 @@ wd.findElement({id: ids.loginBtn}).click().then(function() {
                                                         wd.takeScreenshot().then(function(img2){
                                                             fs.writeFile('end.png', img2, 'base64');
                                                             wd.close();
+                                                            wd.quit();
                                                         });
                                                     });
                                                 });
