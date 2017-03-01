@@ -16,6 +16,11 @@ export PATH=$PATH:$PWD/node_modules/geckodriver/bin &&
 
 # requires node 7.5+
 node selenium-test/test.js
+EXIT_CODE=$?
+
+# cleanup
 rm -f /tmp/GeckoChildCrash*
 rm -rf /tmp/rust_mozprofile*
 rm -rf /tmp/tmp-*
+
+exit $EXIT_CODE
