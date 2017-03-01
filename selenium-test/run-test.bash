@@ -15,3 +15,6 @@ export PATH=$PATH:$PWD/node_modules/geckodriver/bin &&
 # tar -xvjf firefox-*
 
 node selenium-test/test.js
+rm -f /tmp/GeckoChildCrash*
+rm -rf /tmp/rust_mozprofile*
+rm -rf /tmp/tmp-*
