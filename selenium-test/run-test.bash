@@ -13,5 +13,4 @@ export PATH=$PATH:$PWD/node_modules/geckodriver/bin &&
 # get local firefox
 # https://ftp.mozilla.org/pub/firefox/nightly/2017/03/2017-03-01-11-01-55-mozilla-central/firefox-54.0a1.en-US.linux-x86_64.tar.bz2
 # tar -xvjf firefox-*
-
-node selenium-test/test.js
+/opt/node-7.6.0/bin/node selenium-test/test.js
