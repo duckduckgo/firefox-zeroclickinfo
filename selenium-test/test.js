@@ -6,6 +6,7 @@ var By = webdriver.By;
 var process = require('process');
 var env = process.env;
 var fs = require('fs');
+var nodemailer = require('nodemailer');
 
 var ddgEmail = env.DDG_TEST_EMAIL;
 var ddgEmailPw = env.DDG_TEST_EMAIL_PW;
@@ -41,11 +42,10 @@ var ids = {
 
 wd.get('http://google.com');
 wd.findElement({id: ids.loginBtn}).click().then(function() {
-
-        wd.wait(until.elementLocated( By.id(ids.emailBox)), 2000).then(function(emailBox) {
+        wd.wait(until.elementLocated( By.id(ids.emailBox)), 4000).then(function(emailBox) {
             emailBox.sendKeys(ddgEmail);
-
             wd.findElement({id: ids.emailSubmitBtn}).click();
+
 
             wd.wait(until.elementLocated( By.id(ids.passwdBox)), 2000).then(function(passwordBox){
                 wd.wait(until.elementIsVisible(passwordBox), 2000).then(function(passwordBox){
