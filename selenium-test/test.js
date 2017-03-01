@@ -6,7 +6,6 @@ var By = webdriver.By;
 var process = require('process');
 var env = process.env;
 var fs = require('fs');
-var nodemailer = require('nodemailer');
 
 var ddgEmail = env.DDG_TEST_EMAIL;
 var ddgEmailPw = env.DDG_TEST_EMAIL_PW;

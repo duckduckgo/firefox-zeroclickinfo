@@ -14,7 +14,7 @@
     "multiprocess": true
   },
   "scripts": {
-    "test": "bash run-test.bash"
+    "test": "bash selenium-test/run-test.bash"
   },
   "preferences": [
     {
@@ -83,7 +83,6 @@
   "dependencies": {
     "geckodriver": "^1.4.0",
     "jpm": "^1.3.0",
-    "nodemailer": "^3.1.1",
     "selenium-webdriver": "^3.0.1"
   }
 }
