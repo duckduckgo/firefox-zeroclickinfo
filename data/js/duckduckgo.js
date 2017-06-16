@@ -2,6 +2,10 @@
 function getATBParam() {
   return document.querySelector('html').getAttribute('data-atb');
 }
+function getHideToolbarIcon() {
+  return document.querySelector('html').getAttribute('data-hidetoolbarbutton');
+}
 
 var atbParam = getATBParam();
-self.port.emit('loaded', atbParam);
+var hideToolbarIcon = getHideToolbarIcon();
+self.port.emit('loaded', atbParam, hideToolbarIcon);
