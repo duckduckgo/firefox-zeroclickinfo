@@ -2,15 +2,15 @@
   "description": "DuckDuckGo Plus",
   "author": "DuckDuckGo",
   "hasEmbeddedWebExtension": true,
-  "version": "1.1.5.3.beta",
+  "version": "1.1.8",
   "title": "DuckDuckGo Plus",
   "id": "jid1-ZAdIEUB7XOzOJw@jetpack",
-  "icon": {
-    "48": "icon_48.png",
-    "64": "icon_64.png"
-  },
   "name": "duckduckgo_plus",
   "main": "lib/main.js",
+  "icon": {
+      "48": "icon_48.png",
+      "64": "icon_64.png"
+  },
   "permissions": {
     "multiprocess": true
   },
@@ -41,6 +41,13 @@
       "name": "no_popup",
       "value": true,
       "title": "Remove annoying Google marketing popups"
+    },
+    {
+        "type": "bool",
+        "name": "atb_param",
+        "value": true,
+        "title": "Add ATB parameters to DuckDuckGo requests",
+        "hidden": true
     }
   ],
   "dependencies": {
