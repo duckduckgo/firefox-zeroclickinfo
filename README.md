@@ -1,6 +1,8 @@
 firefox-zeroclickinfo
 =====================
 
+**This repository has been deprecated. Our current Firefox extension can be found at: https://github.com/duckduckgo/duckduckgo-privacy-extension.**
+
 DuckDuckGo enhancements for Firefox.
 
 This addon can
